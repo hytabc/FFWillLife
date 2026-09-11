@@ -1,0 +1,278 @@
+import type { Character, Statement } from '../../engine/types'
+import { makeCharacterEndings } from '../_shared/endings'
+
+/**
+ * 晨曦 —— 坦克 / 固定队队长。
+ * 语义弧光：从「我怕我不行」到「你不行也没关系，我带你」。
+ * 黑话频率：豆芽期 1/5 → 导师期 4/5。
+ */
+
+const statements: Statement[] = [
+  // ---- 豆芽期：不安、自我怀疑 ----
+  {
+    id: 'chenxi.sprout.01',
+    characterId: 'chenxi',
+    phase: 'sprout',
+    space: 'city',
+    text: '我能当MT吗？我怕仇恨拉不稳。',
+    carries: ['confide'],
+    terms: ['mt'],
+    isDisplaceable: true,
+    variants: [
+      {
+        kind: 'transform',
+        targetPhase: 'mentor',
+        reinterpretedText: '轮到我自己问出这句话了——只不过这次，是在问一个刚进部队的豆芽。',
+        carries: ['encourage', 'recruit'],
+      },
+      {
+        kind: 'high',
+        reinterpretedText: '一个已经带出过两届新人的人，忽然在深夜的通讯贝里承认：我到现在还是怕。',
+        carries: ['confide', 'grieve'],
+      },
+    ],
+  },
+  {
+    id: 'chenxi.sprout.02',
+    characterId: 'chenxi',
+    phase: 'sprout',
+    space: 'dungeon',
+    text: '第一次进本，我手心全是汗。',
+    carries: ['confide'],
+    terms: [],
+    isDisplaceable: false,
+  },
+  {
+    id: 'chenxi.sprout.03',
+    characterId: 'chenxi',
+    phase: 'sprout',
+    space: 'dungeon',
+    text: '你们别嫌我慢。',
+    carries: ['apology', 'confide'],
+    terms: [],
+    isDisplaceable: false,
+  },
+
+  // ---- 成长期：担当、可靠 ----
+  {
+    id: 'chenxi.growth.01',
+    characterId: 'chenxi',
+    phase: 'growth',
+    space: 'dungeon',
+    text: '钢铁月环我来吃，你们放心输出。',
+    carries: ['reassure'],
+    terms: ['gangtie', 'yuehuan'],
+    isDisplaceable: true,
+    variants: [
+      {
+        kind: 'transform',
+        targetPhase: 'sprout',
+        reinterpretedText: '一个连机制名字都还认不全的新人，把这句话抄进了自己的笔记本。',
+        carries: ['persist'],
+      },
+      {
+        kind: 'microshift',
+        targetSpace: 'linkshell',
+        reinterpretedText: '在没有人看得见的频道里说出这句话，像是给自己壮胆。',
+        carries: ['confide'],
+      },
+    ],
+  },
+  {
+    id: 'chenxi.growth.02',
+    characterId: 'chenxi',
+    phase: 'growth',
+    space: 'dungeon',
+    text: '这把我拉稳了，你们打。',
+    carries: ['reassure'],
+    terms: ['mt'],
+    isDisplaceable: false,
+  },
+  {
+    id: 'chenxi.growth.03',
+    characterId: 'chenxi',
+    phase: 'growth',
+    space: 'dungeon',
+    text: '灭了算我的。',
+    carries: ['reassure'],
+    terms: [],
+    isDisplaceable: false,
+  },
+
+  {
+    id: 'chenxi.growth.04',
+    characterId: 'chenxi',
+    phase: 'growth',
+    space: 'linkshell',
+    text: '零式的招募我写好了，明天继续。灭一次不算什么。',
+    carries: ['reassure', 'persist'],
+    terms: ['lingshi'],
+    isDisplaceable: false,
+  },
+  {
+    id: 'chenxi.growth.05',
+    characterId: 'chenxi',
+    phase: 'growth',
+    space: 'city',
+    text: '我不是最厉害的那个，但我是最不会走的那个。',
+    carries: ['confide', 'reassure'],
+    terms: [],
+    isDisplaceable: true,
+    variants: [
+      {
+        kind: 'transform',
+        targetPhase: 'mentor',
+        reinterpretedText: '多年以后他把这句话讲给一个想退队的豆芽听——那时他才发现自己真的做到了。',
+        carries: ['encourage', 'recruit'],
+      },
+    ],
+  },
+  {
+    id: 'chenxi.growth.06',
+    characterId: 'chenxi',
+    phase: 'growth',
+    space: 'city',
+    text: '你们要是哪天不打了，记得跟我说一声。',
+    carries: ['confide', 'grieve'],
+    terms: [],
+    isDisplaceable: true,
+    variants: [
+      {
+        kind: 'high',
+        reinterpretedText: '这句话被送到他已经不再上线的那一年：没有人和他说一声，他是自己发现的。',
+        carries: ['grieve', 'withdraw'],
+      },
+    ],
+  },
+
+  // ---- 成熟期：领导、责任 ----
+  {
+    id: 'chenxi.mature.01',
+    characterId: 'chenxi',
+    phase: 'mature',
+    space: 'linkshell',
+    text: '首周过不了没关系，别把亲友打散了。',
+    carries: ['reassure', 'boundary'],
+    terms: ['shouzhou'],
+    isDisplaceable: true,
+    variants: [
+      {
+        kind: 'transform',
+        targetPhase: 'growth',
+        reinterpretedText: '在一个所有人都在拼进度的时期说出这句话，像是一盆冷水——但有人正需要它。',
+        carries: ['reassure'],
+      },
+    ],
+  },
+  {
+    id: 'chenxi.mature.02',
+    characterId: 'chenxi',
+    phase: 'mature',
+    space: 'fc-house',
+    text: '进度可以慢，人不能散。',
+    carries: ['reassure', 'boundary'],
+    terms: [],
+    isDisplaceable: false,
+  },
+  {
+    id: 'chenxi.mature.03',
+    characterId: 'chenxi',
+    phase: 'mature',
+    space: 'linkshell',
+    text: '我不是要你们多强，我是想大家还能一起玩。',
+    carries: ['confide', 'reassure'],
+    terms: [],
+    isDisplaceable: false,
+  },
+
+  // ---- 导师期：传承、包容 ----
+  {
+    id: 'chenxi.mentor.01',
+    characterId: 'chenxi',
+    phase: 'mentor',
+    space: 'dungeon',
+    text: '豆芽慢慢来，我当初也是躺尸过来的。',
+    carries: ['encourage', 'recruit'],
+    terms: ['douya', 'tangshi-long'],
+    isDisplaceable: true,
+    variants: [
+      {
+        kind: 'transform',
+        targetPhase: 'sprout',
+        reinterpretedText: '这句话提前很多年落到自己耳朵里——那时的他还不相信，有一天自己真的会不害怕。',
+        carries: ['encourage', 'reminisce'],
+      },
+    ],
+  },
+  {
+    id: 'chenxi.mentor.02',
+    characterId: 'chenxi',
+    phase: 'mentor',
+    space: 'city',
+    text: '新人问什么都行，没有蠢问题。',
+    carries: ['encourage', 'recruit'],
+    terms: ['douya'],
+    isDisplaceable: false,
+  },
+  {
+    id: 'chenxi.mentor.03',
+    characterId: 'chenxi',
+    phase: 'mentor',
+    space: 'dungeon',
+    text: '我带你走一遍，你下次就会了。',
+    carries: ['encourage', 'recruit'],
+    terms: [],
+    isDisplaceable: false,
+  },
+]
+
+export const chenxi: Character = {
+  id: 'chenxi',
+  name: '晨曦',
+  role: '坦克 / 固定队队长',
+  themeColor: '#7fb2e5',
+  arc: '从「我怕我不行」，到「你不行也没关系，我带你」。他最终要学会的不是扛下一切，而是相信别人也能扛。',
+  statements,
+  endings: makeCharacterEndings(
+    'chenxi',
+    [
+      {
+        rating: 'S',
+        id: 'chenxi.S',
+        name: '传承',
+        summary: '晨曦把队长之位交给值得托付的人，自己退居幕后成为顾问。固定队没有因为他离开而散，反而长出了新的枝。',
+      },
+      {
+        rating: 'A',
+        id: 'chenxi.A',
+        name: '坚守',
+        summary: '晨曦继续担任队长，团队稳定，但他个人的成长停在了原地——他依然不放心把后背交给别人。',
+      },
+      {
+        rating: 'B',
+        id: 'chenxi.B',
+        name: '缺口',
+        summary: '晨曦终于意识到自己无法兼顾所有人。某个夜晚，他默默退出了通讯贝，没有告别。',
+      },
+      {
+        rating: 'C',
+        id: 'chenxi.C',
+        name: '独行',
+        summary: '晨曦解散了固定队，独自一人继续冒险。他仍然上线，只是不再组队。',
+      },
+      {
+        rating: 'D',
+        id: 'chenxi.D',
+        name: '熄灭',
+        summary: '一次严重的团队冲突之后，晨曦彻底放弃了带新人。他还在艾欧泽亚，但不再对任何人说「我带你」。',
+      },
+    ],
+    {
+      S: ['L01-05', 'L05-01'],
+      A: ['L01-03'],
+      B: ['L01-04'],
+      C: ['L03-05'],
+      D: ['L02-04'],
+    },
+  ),
+}

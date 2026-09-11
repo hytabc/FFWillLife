@@ -1,0 +1,13 @@
+node_modules
+dist
+dist-ssr
+*.local
+.DS_Store
+.vite
+
+# IDE —— 仓库里只保留 .idea 的既有配置，忽略工作区私有状态
+.idea/workspace.xml
+
+# 构建与测试产物
+coverage
+*.tsbuildinfo
