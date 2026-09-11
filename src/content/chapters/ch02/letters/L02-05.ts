@@ -26,9 +26,9 @@ const B3 = 'L02-05.b3-liefeng-standard'
 const B4 = 'L02-05.b4-tiebi-rule'
 
 const relations: KeyRelation[] = [
-  // 铃兰那句「CWLS建好了，随时来聊天」被从频道里搬进了屋子
+  // 铃兰那句「跨服通讯贝建好了，随时来聊天」被从频道里搬进了屋子
   { id: 'L02-05.rel.linglan-said-in-the-room', kind: 'displacedInto', subject: B2, tier: 'microshift' },
-  // 烈风那句「炒不到80+就别来零式了」也被搬进了屋子
+  // 烈风那句「炒股炒不明白就别来零式，我可不陪谁渡劫」也被搬进了屋子
   { id: 'L02-05.rel.liefeng-said-in-the-room', kind: 'displacedInto', subject: B3, tier: 'microshift' },
   // 先有人说「这里随时来聊天」，那句难听的标准落下来才不至于把人赶走
   { id: 'L02-05.rel.linglan-before-liefeng', kind: 'precedes', subject: B2, object: B3 },
@@ -50,8 +50,8 @@ const endings: LetterEnding[] = [
     title: '这间屋子的灯是亮着的',
     body:
       '铁壁先把规矩说在了前面：他想建一个不踢挂机的人的部队，来的人他一个都不赶。\n\n' +
-      '然后是铃兰。她把自己打在频道里的那句话搬进了屋子说——「CWLS建好了，随时来聊天。」在频道里，它只是又多了一个可以静音的频道；在这间屋子里，它是一间永远留着灯的房间。\n\n' +
-      '最后是烈风。他也把那句最狠的标准从频道里搬了出来，当着所有人的面说：「炒不到80+就别来零式了。」在频道里读它，它只是一条要求；在屋子里当着人的面说出来，它本该是一次羞辱——但规矩和那盏灯都已经排在前面了，所有人听见的是另一件事：他只是不想再看见有人因为打不好就自己走掉。\n\n' +
+      '然后是铃兰。她把自己打在频道里的那句话搬进了屋子说——「跨服通讯贝建好了，随时来聊天。」在频道里，它只是又多了一个可以静音的频道；在这间屋子里，它是一间永远留着灯的房间。\n\n' +
+      '最后是烈风。他也把那句最狠的标准从频道里搬了出来，当着所有人的面说：「炒股炒不明白就别来零式，我可不陪谁渡劫。」在频道里读它，它只是一条要求；在屋子里当着人的面说出来，它本该是一次羞辱——但规矩和那盏灯都已经排在前面了，所有人听见的是另一件事：他只是不想再看见有人因为打不好就自己走掉。\n\n' +
       '那天没有人退队，也没有人被赶走。挂在频道最上面的那句「我会努力的，别不要我」，第一次有人认真回了一整晚。',
     requires: ALL,
     minSatisfied: 4,
@@ -86,7 +86,7 @@ const endings: LetterEnding[] = [
     rating: 'B',
     title: '规矩立住了，但没有人听见代价',
     body:
-      '铁壁把规矩说在了前面，铃兰也把那句「CWLS建好了，随时来聊天」从频道里搬进了屋子。\n\n' +
+      '铁壁把规矩说在了前面，铃兰也把那句「跨服通讯贝建好了，随时来聊天」从频道里搬进了屋子。\n\n' +
       '只有烈风那句话还留在频道里。那天晚上没有人当着面听见它，也就没有人需要为它低头。规矩立住了，屋子里的灯也亮着——只是没有人知道，下一次那句话写进频道的时候，它会不会正好被某个刚进来的人读到。',
     requires: ALL,
     minSatisfied: 2,
@@ -103,7 +103,7 @@ const endings: LetterEnding[] = [
     rating: 'C',
     title: '两句话都留在了频道里',
     body:
-      '那天晚上，铃兰和烈风的两句话都留在了频道里。一个在频道里说「CWLS建好了，随时来聊天」，一个在频道里说「炒不到80+就别来零式了」。一样是打字，谁都能当作没看见，谁都不必抬头。\n\n' +
+      '那天晚上，铃兰和烈风的两句话都留在了频道里。一个在频道里说「跨服通讯贝建好了，随时来聊天」，一个在频道里说「炒股炒不明白就别来零式，我可不陪谁渡劫」。一样是打字，谁都能当作没看见，谁都不必抬头。\n\n' +
       '铁壁的规矩是最后才说的。他说的时候，屋里已经散得差不多了，只有小星还在。\n\n' +
       '那句「我会努力的，别不要我」一直挂在频道最上面。那天没有人回它——不是不想回，是那句话本来就写在没有人看的地方。',
     requires: ALL,
@@ -142,8 +142,8 @@ export const L02_05: Letter = {
   blocks: [
     { id: B1, statementId: 'xiaoxing.sprout.06', draggable: false, homeIndex: 0 },
     { id: B2, statementId: 'linglan.growth.01', draggable: true, homeIndex: 1 },
-    { id: B3, statementId: 'liefeng.growth.01', draggable: true, homeIndex: 2 },
-    { id: B4, statementId: 'tiebi.growth.01', draggable: true, homeIndex: 3 },
+    { id: B3, statementId: 'liefeng.growth.01b', draggable: true, homeIndex: 2 },
+    { id: B4, statementId: 'tiebi.growth.01b', draggable: true, homeIndex: 3 },
   ],
   relations,
   endings,

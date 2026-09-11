@@ -35,7 +35,7 @@ const relations: KeyRelation[] = [
   { id: R3, kind: 'displacedInto', subject: B5, tier: 'transform' },
   // 铃兰把「挂机也是一种陪伴」重新摆了一遍——这次是替自己说的
   { id: R4, kind: 'displacedInto', subject: B2, tier: 'reorder' },
-  // 夜语那句「你的RP角色，也是你光之战士的一部分」被带进这封信（microshift）
+  // 夜语那句「你演的那个人，也是你自己的一部分」被带进这封信（microshift）
   { id: R5, kind: 'displacedInto', subject: B3, tier: 'microshift' },
 ]
 
@@ -51,7 +51,7 @@ const endings: LetterEnding[] = [
       '「我今天不想打本，就想挂会儿机。」\n' +
       '「你们有没有想过，我也需要有人问一句累不累。」\n\n' +
       '铃兰读到这里的时候愣了很久。她一直以为自己是唯一一个数着位置的人。她把这句"挂机也是一种陪伴"重新摆了一遍——这一次不是替别人说的，是替自己。\n\n' +
-      '夜语那句话被摆在了她们中间，谁也挨不着谁：你的角色也是你。她把它抄在通讯贝的公告栏上。有人问她为什么，她说因为这句话不是在说别人。\n\n' +
+      '夜语那句话被摆在了她们中间，谁也挨不着谁：你演的那个人，也是你自己的一部分。她把它抄在通讯贝的公告栏上。有人问她为什么，她说因为这句话不是在说别人。\n\n' +
       '那天她没有关频道。她只是把状态改成了"在线"，然后什么也没做——第一次有人看见她也在。',
     requires: ALL,
     minSatisfied: 5,
@@ -115,7 +115,7 @@ const endings: LetterEnding[] = [
     rating: 'D',
     title: '散场以后',
     body:
-      '这一晚的每一句话都落在了错的地方。月见说了自己累，没有人接；夜语那句"你的角色也是你"被摆在角落里，像是在说别人；铃兰张罗了一整场，散场以后一个人把灯关掉。\n\n' +
+      '这一晚的每一句话都落在了错的地方。月见说了自己累，没有人接；夜语那句"你演的那个人，也是你自己的一部分"被摆在角落里，像是在说别人；铃兰张罗了一整场，散场以后一个人把灯关掉。\n\n' +
       '门口的位置牌还插着。第二天早上有人路过，看见那家店的门开着，里面没有人。',
     requires: ALL,
     minSatisfied: 0,
@@ -154,7 +154,7 @@ export const L05_08: Letter = {
   blocks: [
     { id: B1, statementId: 'linglan.mentor.01', draggable: false, homeIndex: 0 },
     { id: B2, statementId: 'linglan.mentor.02', draggable: true, homeIndex: 1 },
-    { id: B3, statementId: 'yeyu.mentor.01', draggable: true, homeIndex: 2 },
+    { id: B3, statementId: 'yeyu.mentor.01b', draggable: true, homeIndex: 2 },
     { id: B4, statementId: 'yuejian.mature.02', draggable: true, homeIndex: 3 },
     { id: B5, statementId: 'yuejian.mature.03', draggable: true, homeIndex: 4 },
   ],

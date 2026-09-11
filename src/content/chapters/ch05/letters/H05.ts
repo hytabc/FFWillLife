@@ -40,7 +40,7 @@ const relations: KeyRelation[] = [
   { id: R2, kind: 'adjacent', subject: B3, object: B2 },
   // 晨曦那句许可被挪出了原位
   { id: R3, kind: 'displacedInto', subject: B3, tier: 'microshift' },
-  // 远山那句「回来就好，副本没变」被挪出了原位
+  // 远山那句「回来就好，副本还在这儿等你」被挪出了原位
   { id: R4, kind: 'displacedInto', subject: B4, tier: 'microshift' },
   // 烈风那句「先玩得开心」被挪出了原位
   { id: R5, kind: 'displacedInto', subject: B5, tier: 'microshift' },
@@ -57,7 +57,7 @@ const endings: LetterEnding[] = [
     title: '致倾听者',
     body:
       '这一封信里，所有的话都被重新摆过一次——没有一句话留在它原来的地方。\n\n' +
-      '「欢迎回家。」——先说这句，因为这是这封信存在的理由。紧接着是「回来就好，副本没变，我带你复健」：回家和复健之间没有别的，没有门槛，没有考核，没有"你落后了多少"。\n\n' +
+      '「欢迎回家。」——先说这句，因为这是这封信存在的理由。紧接着是「回来就好，副本还在这儿等你」：回家和复健之间没有别的，没有门槛，没有考核，没有"你落后了多少"。\n\n' +
       '然后是那句最初的话：「零式是什么，我能来吗？」。它被带到了很远之后，问题本身已经不重要了——重要的是，这一次它后面紧跟着「新人问什么都行，没有蠢问题」。问题先被允许，才敢出口。\n\n' +
       '「打得不好没关系，先玩得开心。」\n\n' +
       '最后一句不是谁对谁说的，是这封信对读信的人说的：把它玩成什么样都没关系，衣服是你自己挑的，人也是。\n\n' +
@@ -182,7 +182,7 @@ export const H05: Letter = {
     { id: B1, statementId: 'tiebi.mentor.01', draggable: false, homeIndex: 0 },
     { id: B2, statementId: 'xiaoxing.sprout.02', draggable: true, homeIndex: 1 },
     { id: B3, statementId: 'chenxi.mentor.02', draggable: true, homeIndex: 2 },
-    { id: B4, statementId: 'yuanshan.mentor.01', draggable: true, homeIndex: 3 },
+    { id: B4, statementId: 'yuanshan.mentor.01b', draggable: true, homeIndex: 3 },
     { id: B5, statementId: 'liefeng.mentor.02', draggable: true, homeIndex: 4 },
     { id: B6, statementId: 'yeyu.mentor.03', draggable: false, homeIndex: 5 },
   ],

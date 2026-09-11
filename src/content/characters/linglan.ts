@@ -6,7 +6,7 @@ import { makeCharacterEndings } from '../_shared/endings'
  * 语义弧光：从「加个好友吧？」，到「倾听本身就是一种陪伴」。
  * 她把所有人连在一起，然后站在连接点外面；她要学的是：连接是自由的。
  * 黑话频率：豆芽期 1/5 → 成长期 2/5 → 成熟期 2/5 → 导师期 3/5。
- *   她的术语全部围绕社交系统（通讯贝 / CWLS / 挂机 / 频道），
+ *   她的术语全部围绕社交系统（通讯贝 / 跨服通讯贝 / 挂机 / 频道），
  *   且**从不谈副本**——这不是她不会，是她不在那里。
  */
 
@@ -63,7 +63,7 @@ const statements: Statement[] = [
     characterId: 'linglan',
     phase: 'growth',
     space: 'linkshell',
-    text: 'CWLS建好了，随时来聊天。',
+    text: '跨服通讯贝建好了，随时来聊天。',
     carries: ['invite', 'reassure'],
     terms: ['cwls'],
     isDisplaceable: true,
@@ -87,7 +87,7 @@ const statements: Statement[] = [
     characterId: 'linglan',
     phase: 'growth',
     space: 'linkshell',
-    text: '我在通讯贝里等你们。',
+    text: '我就在通讯贝里等着你们。',
     carries: ['reassure', 'persist'],
     terms: ['tongxunbei'],
     isDisplaceable: false,
@@ -191,6 +191,184 @@ const statements: Statement[] = [
     carries: ['invite', 'reassure'],
     terms: ['gpose'],
     isDisplaceable: false,
+  },
+
+  // ---- 同一句话不再跨信重复：以下为各信专用版本，carries 与原句一致 ----
+  {
+    id: 'linglan.sprout.01b',
+    characterId: 'linglan',
+    phase: 'sprout',
+    space: 'city',
+    text: '交个朋友好不好？我拉你进通讯贝。',
+    carries: ['invite'],
+    terms: ['tongxunbei'],
+    isDisplaceable: true,
+    variants: [
+      {
+        kind: 'transform',
+        targetPhase: 'growth',
+        reinterpretedText: '同一个问句，这一次她是站在门里的那个人：门开着，位置留着，来不来都可以。',
+        carries: ['invite', 'encourage'],
+      },
+      {
+        kind: 'transform',
+        targetPhase: 'mature',
+        reinterpretedText: '说出口的时候，她其实是在等有人这样问她——但所有听见的人，都只当成了一份邀请。',
+        carries: ['confide', 'grieve'],
+      },
+    ],
+  },
+  {
+    id: 'linglan.sprout.01c',
+    characterId: 'linglan',
+    phase: 'sprout',
+    space: 'city',
+    text: '认识一下吧？我带你进通讯贝。',
+    carries: ['invite'],
+    terms: ['tongxunbei'],
+    isDisplaceable: true,
+    variants: [
+      {
+        kind: 'transform',
+        targetPhase: 'growth',
+        reinterpretedText: '同一个问句，这一次她是站在门里的那个人：门开着，位置留着，来不来都可以。',
+        carries: ['invite', 'encourage'],
+      },
+      {
+        kind: 'transform',
+        targetPhase: 'mature',
+        reinterpretedText: '说出口的时候，她其实是在等有人这样问她——但所有听见的人，都只当成了一份邀请。',
+        carries: ['confide', 'grieve'],
+      },
+    ],
+  },
+  {
+    id: 'linglan.sprout.01d',
+    characterId: 'linglan',
+    phase: 'sprout',
+    space: 'city',
+    text: '做个朋友吧？我拉你进通讯贝。',
+    carries: ['invite'],
+    terms: ['tongxunbei'],
+    isDisplaceable: true,
+    variants: [
+      {
+        kind: 'transform',
+        targetPhase: 'growth',
+        reinterpretedText: '同一个问句，这一次她是站在门里的那个人：门开着，位置留着，来不来都可以。',
+        carries: ['invite', 'encourage'],
+      },
+      {
+        kind: 'transform',
+        targetPhase: 'mature',
+        reinterpretedText: '说出口的时候，她其实是在等有人这样问她——但所有听见的人，都只当成了一份邀请。',
+        carries: ['confide', 'grieve'],
+      },
+    ],
+  },
+  {
+    id: 'linglan.sprout.03b',
+    characterId: 'linglan',
+    phase: 'sprout',
+    space: 'linkshell',
+    text: '还差谁？我把他拉进来。',
+    carries: ['invite', 'persist'],
+    terms: [],
+    isDisplaceable: false,
+  },
+  {
+    id: 'linglan.growth.01b',
+    characterId: 'linglan',
+    phase: 'growth',
+    space: 'linkshell',
+    text: '跨服通讯贝我建好了，你们随时来。',
+    carries: ['invite', 'reassure'],
+    terms: ['cwls'],
+    isDisplaceable: true,
+    variants: [
+      {
+        kind: 'microshift',
+        targetSpace: 'fc-house',
+        reinterpretedText: '把这句话说在部队房里，它就不只是一个频道，而是一间永远留着灯的房间。',
+        carries: ['reassure', 'invite'],
+      },
+      {
+        kind: 'transform',
+        targetPhase: 'mature',
+        reinterpretedText: '很久以后她重读这一句，才发现频道一直开着——只是里面的名字一个接一个灰了下去。',
+        carries: ['grieve', 'withdraw'],
+      },
+    ],
+  },
+  {
+    id: 'linglan.growth.01c',
+    characterId: 'linglan',
+    phase: 'growth',
+    space: 'linkshell',
+    text: '我把跨服通讯贝开好了，随时来坐。',
+    carries: ['invite', 'reassure'],
+    terms: ['cwls'],
+    isDisplaceable: true,
+    variants: [
+      {
+        kind: 'microshift',
+        targetSpace: 'fc-house',
+        reinterpretedText: '把这句话说在部队房里，它就不只是一个频道，而是一间永远留着灯的房间。',
+        carries: ['reassure', 'invite'],
+      },
+      {
+        kind: 'transform',
+        targetPhase: 'mature',
+        reinterpretedText: '很久以后她重读这一句，才发现频道一直开着——只是里面的名字一个接一个灰了下去。',
+        carries: ['grieve', 'withdraw'],
+      },
+    ],
+  },
+  {
+    id: 'linglan.mature.01b',
+    characterId: 'linglan',
+    phase: 'mature',
+    space: 'linkshell',
+    text: '一屏消息九百多条，没有一条是找我的。',
+    carries: ['confide', 'grieve'],
+    terms: ['tongxunbei'],
+    isDisplaceable: true,
+    variants: [
+      {
+        kind: 'transform',
+        targetPhase: 'mentor',
+        reinterpretedText: '很久以后她才读得懂这一句：它从来不是控诉，只是一个人在数自己手里还剩多少东西。',
+        carries: ['boundary', 'reassure'],
+      },
+      {
+        kind: 'high',
+        reinterpretedText: '在一个不属于这个时空的频道里，这一行会被所有人看见——那是她唯一一次没有把孤独藏进数字里。',
+        carries: ['confide', 'grieve'],
+      },
+    ],
+  },
+  {
+    id: 'linglan.mentor.01b',
+    characterId: 'linglan',
+    phase: 'mentor',
+    space: 'linkshell',
+    text: '陪着一个人，本身就是在听。',
+    carries: ['reassure', 'boundary'],
+    terms: [],
+    isDisplaceable: true,
+    variants: [
+      {
+        kind: 'transform',
+        targetPhase: 'growth',
+        reinterpretedText: '在还靠热闹确认自己被需要的时候读到它，她只当是一句安慰——那时她还做不到，但她把它记了下来。',
+        carries: ['confide', 'persist'],
+      },
+      {
+        kind: 'high',
+        reinterpretedText: '在一个和「我是谁」互换过的时空里，这句话照样成立：它回答的不是「我是谁」，而是「我在不在」。',
+        carries: ['reassure', 'encourage'],
+      },
+    ],
   },
 ]
 

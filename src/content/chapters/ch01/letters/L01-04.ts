@@ -111,9 +111,9 @@ export const L01_04: Letter = {
     '现在想想，那是我们第一次一起经历不太好的一天。我想知道那天有没有一种说法，能让我们靠得更近一点。',
   signature: '——月见',
   blocks: [
-    { id: 'L01-04.b1-chenxi', statementId: 'chenxi.growth.04', draggable: false, homeIndex: 0 },
-    { id: B2, statementId: 'liefeng.growth.04', draggable: true, homeIndex: 1 },
-    { id: B3, statementId: 'yuejian.growth.03', draggable: true, homeIndex: 2 },
+    { id: 'L01-04.b1-chenxi', statementId: 'chenxi.growth.04c', draggable: false, homeIndex: 0 },
+    { id: B2, statementId: 'liefeng.growth.04b', draggable: true, homeIndex: 1 },
+    { id: B3, statementId: 'yuejian.growth.03b', draggable: true, homeIndex: 2 },
     { id: B4, statementId: 'yuejian.growth.04', draggable: true, homeIndex: 3 },
   ],
   relations,

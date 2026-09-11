@@ -49,7 +49,7 @@ const endings: LetterEnding[] = [
     tendency: [
       { characterId: 'liefeng', delta: 2, reason: '他最后一个松口，也最彻底' },
       { characterId: 'yuejian', delta: 2, reason: '她先承认了自己想歇一歇' },
-      { characterId: 'chenxi', delta: 1, reason: '他先说了「灭了算我的」，把责任揽了下来' },
+      { characterId: 'chenxi', delta: 1, reason: '他先说了「这把我来兜底」，把责任揽了下来' },
     ],
   },
   {
@@ -118,8 +118,8 @@ export const L01_05: Letter = {
     '我后来常常看那张照片。我想知道，那天如果换一个顺序把话说开，照片里的我们会不会更像我们。',
   signature: '——晨曦',
   blocks: [
-    { id: 'L01-05.b1-chenxi', statementId: 'chenxi.growth.03', draggable: false, homeIndex: 0 },
-    { id: B2, statementId: 'yuejian.growth.01', draggable: true, homeIndex: 1 },
+    { id: 'L01-05.b1-chenxi', statementId: 'chenxi.growth.03b', draggable: false, homeIndex: 0 },
+    { id: B2, statementId: 'yuejian.growth.01c', draggable: true, homeIndex: 1 },
     { id: B3, statementId: 'liefeng.growth.02', draggable: true, homeIndex: 2 },
     { id: B4, statementId: 'liefeng.growth.03', draggable: true, homeIndex: 3 },
   ],

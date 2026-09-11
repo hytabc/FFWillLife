@@ -56,7 +56,7 @@ const endings: LetterEnding[] = [
       '月见先开了口。她说，我也有奶不动的时候，别什么都指望我。\n\n' +
       '那句话说得一点都不重，桌上却安静了下来——在这家店里，谁也没想到第一个从角色里走出来的是她。\n\n' +
       '然后夜语才承认：他分不清哪一句是自己的了。他说得很轻，像在说一件很小的事，小到不需要别人安慰。\n\n' +
-      '最后是铃兰。她把一句很久以前在频道里说过的话又说了一遍——建好了，随时来聊天。这一次它是说给一个刚从角色里走出来的人听的。\n\n' +
+      '最后是铃兰。她把一句很久以前在频道里说过的话又说了一遍——跨服通讯贝我建好了，你们随时来。这一次它是说给一个刚从角色里走出来的人听的。\n\n' +
       '那天夜里没有人拆穿谁，也没有人从店里跑出去。有人在门口站了一会儿，又走回来坐下。',
     requires: ALL,
     minSatisfied: 4,
@@ -157,9 +157,9 @@ export const L04_01: Letter = {
   signature: '——夜语',
   blocks: [
     { id: 'L04-01.b1-yeyu-turn', statementId: 'yeyu.mature.02', draggable: false, homeIndex: 0 },
-    { id: B2, statementId: 'linglan.growth.01', draggable: true, homeIndex: 1 },
-    { id: B3, statementId: 'yuejian.mature.01', draggable: true, homeIndex: 2 },
-    { id: B4, statementId: 'yeyu.mature.01', draggable: true, homeIndex: 3 },
+    { id: B2, statementId: 'linglan.growth.01b', draggable: true, homeIndex: 1 },
+    { id: B3, statementId: 'yuejian.mature.01b', draggable: true, homeIndex: 2 },
+    { id: B4, statementId: 'yeyu.mature.01b', draggable: true, homeIndex: 3 },
   ],
   relations,
   endings,

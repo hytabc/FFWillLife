@@ -24,11 +24,11 @@ const R4 = 'L05-03.rel.tired-before-lenient'
 const R5 = 'L05-03.rel.own-record-resaid'
 
 const relations: KeyRelation[] = [
-  // 小星抢着说「这个机制我熟，我来标A点」——成长期的那声「我来」被拖进了导师期
+  // 小星抢着说「这个机制我熟，我来标点吧」——成长期的那声「我来」被拖进了导师期
   { id: R1, kind: 'displacedInto', subject: B4, tier: 'transform' },
   // 月见那句「我也有奶不动的时候」被拖到同一个晚上
   { id: R2, kind: 'displacedInto', subject: B5, tier: 'transform' },
-  // 先看见那个抢着扛的人，烈风才说得出「先玩得开心」
+  // 先看见那个抢着扛的人，烈风才说得出「别把输赢看得太重」
   { id: R3, kind: 'precedes', subject: B4, object: B2 },
   // 先听见那个撑不住的人，烈风才不再较真
   { id: R4, kind: 'precedes', subject: B5, object: B2 },
@@ -44,9 +44,9 @@ const endings: LetterEnding[] = [
     rating: 'S',
     title: '尺子收回来了',
     body:
-      '小星抢着说「我来标A点」的时候，烈风看了她很久——他认得那个眼神，那是几年前的自己，急着证明自己配得上这支队伍。\n\n' +
+      '小星抢着说「我来标点吧」的时候，烈风看了她很久——他认得那个眼神，那是几年前的自己，急着证明自己配得上这支队伍。\n\n' +
       '随后是月见。她说她也有奶不动的时候，说完就低下头，像是道歉。烈风忽然想起自己从来没有在循环里算过她。\n\n' +
-      '于是那句「打得不好没关系，先玩得开心」出口的时候，不是在安慰谁，是他真的这么想了。他把那句话重新说了一遍，说给自己听：我以前太较真了。\n\n' +
+      '于是那句「别把输赢看得太重」出口的时候，不是在安慰谁，是他真的这么想了。他把那句话重新说了一遍，说给自己听：我以前太较真了。\n\n' +
       '那天之后他不再看别人的记录，只看自己的。他的输出降了一点，队却再也没散过。',
     requires: ALL,
     minSatisfied: 5,
@@ -60,16 +60,16 @@ const endings: LetterEnding[] = [
   {
     id: 'L05-03.E.a',
     rating: 'A',
-    title: '先玩得开心',
+    title: '别把输赢看得太重',
     body:
-      '他先说了「先玩得开心」，然后才看见小星抢着要标点、才听见月见说自己也会奶不动。话说反了，但意思还是到了。\n\n' +
+      '他先说了「别把输赢看得太重」，然后才看见小星抢着要标点、才听见月见说自己也会奶不动。话说反了，但意思还是到了。\n\n' +
       '小星把那句话记进了本子，月见笑了一下，没说话。烈风后来又补了一句「你们别多想」，越描越黑，队里第一次有人当着他的面笑出声。',
     requires: ALL,
     minSatisfied: 4,
     priority: 20,
     tendency: [
       { characterId: 'liefeng', delta: 1, reason: '他把话说反了，但第一次先说了软的那句' },
-      { characterId: 'xiaoxing', delta: 1, reason: '她把"先玩得开心"记进了本子' },
+      { characterId: 'xiaoxing', delta: 1, reason: '她把"别把输赢看得太重"记进了本子' },
       { characterId: 'yuejian', delta: 1, reason: '她笑了一下——很久没在语音里笑过' },
     ],
   },
@@ -95,7 +95,7 @@ const endings: LetterEnding[] = [
     title: '80+之上',
     body:
       '这一晚的语音里只有数字。谁差了多少，谁的循环断了，谁的记录还能再高三点。\n\n' +
-      '小星把「我来标A点」打出来又删掉了。月见没说自己蓝量不够。烈风在木桩前站到很晚，把同一个循环练了三十遍——他赢了那场比较，赢了之后，频道里只剩他一个人。',
+      '小星把「我来标点吧」打出来又删掉了。月见没说自己蓝量不够。烈风在木桩前站到很晚，把同一个循环练了三十遍——他赢了那场比较，赢了之后，频道里只剩他一个人。',
     requires: ALL,
     minSatisfied: 2,
     priority: 40,
@@ -148,10 +148,10 @@ export const L05_03: Letter = {
   signature: '——烈风',
   blocks: [
     { id: B1, statementId: 'liefeng.mentor.03', draggable: false, homeIndex: 0 },
-    { id: B2, statementId: 'liefeng.mentor.02', draggable: true, homeIndex: 1 },
-    { id: B3, statementId: 'liefeng.mentor.01', draggable: true, homeIndex: 2 },
-    { id: B4, statementId: 'xiaoxing.growth.01', draggable: true, homeIndex: 3 },
-    { id: B5, statementId: 'yuejian.mature.01', draggable: true, homeIndex: 4 },
+    { id: B2, statementId: 'liefeng.mentor.02b', draggable: true, homeIndex: 1 },
+    { id: B3, statementId: 'liefeng.mentor.01b', draggable: true, homeIndex: 2 },
+    { id: B4, statementId: 'xiaoxing.growth.01b', draggable: true, homeIndex: 3 },
+    { id: B5, statementId: 'yuejian.mature.01c', draggable: true, homeIndex: 4 },
   ],
   relations,
   endings,

@@ -170,9 +170,9 @@ export const L01_01: Letter = {
   signature: '——月见',
   blocks: [
     { id: BLOCK_CHENXI, statementId: 'chenxi.growth.03', draggable: false, homeIndex: 0 },
-    { id: BLOCK_LIEFENG_CONFESS, statementId: 'liefeng.growth.02', draggable: true, homeIndex: 1 },
-    { id: BLOCK_YUEJIAN, statementId: 'yuejian.growth.01', draggable: true, homeIndex: 2 },
-    { id: BLOCK_LIEFENG_BLAME, statementId: 'liefeng.growth.03', draggable: true, homeIndex: 3 },
+    { id: BLOCK_LIEFENG_CONFESS, statementId: 'liefeng.growth.02b', draggable: true, homeIndex: 1 },
+    { id: BLOCK_YUEJIAN, statementId: 'yuejian.growth.01b', draggable: true, homeIndex: 2 },
+    { id: BLOCK_LIEFENG_BLAME, statementId: 'liefeng.growth.03b', draggable: true, homeIndex: 3 },
   ],
   relations,
   endings,

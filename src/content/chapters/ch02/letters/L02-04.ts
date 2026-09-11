@@ -21,11 +21,11 @@ const B3 = 'L02-04.b3-tiebi-quiet-ok'
 const relations: KeyRelation[] = [
   // 她先把「不懂」说出口，那口锅才有人认——认错的顺序是从最不懂的人开始往前排
   { id: 'L02-04.rel.noclue-before-takes-it', kind: 'precedes', subject: B2, object: B1 },
-  // 她先承认了自己没听懂，铁壁那句「我可以跟着你们吗」才是在回答她
+  // 她先承认了自己没听懂，铁壁那句「我能跟在你们后面吗」才是在回答她
   { id: 'L02-04.rel.noclue-before-quiet-ok', kind: 'precedes', subject: B2, object: B3 },
   // 先把账认下来，才有人敢说「我不说话也行」——否则那句话像是在求人收留
   { id: 'L02-04.rel.takes-it-before-quiet-ok', kind: 'precedes', subject: B1, object: B3 },
-  // 那句「我查了半天也没查懂」不是在频道里打出来的，是当着面问的
+  // 那句「我到现在也没弄明白」不是在频道里打出来的，是当着面问的
   { id: 'L02-04.rel.asked-face-to-face', kind: 'displacedInto', subject: B2, tier: 'microshift' },
 ]
 
@@ -42,7 +42,7 @@ const endings: LetterEnding[] = [
     rating: 'S',
     title: '有人先说了「我不懂」',
     body:
-      '她把那句「你们说的那个词，我查了半天也没查懂」当着所有人的面问了出来，而不是先偷偷记下来、回去自己查。\n\n' +
+      '她把那句「你们刚说的那个词，我到现在也没弄明白」当着所有人的面问了出来，而不是先偷偷记下来、回去自己查。\n\n' +
       '然后是月见。她说对不起，是她没奶上——这口锅她认得很快，快得像练过。这一句认下来，队里那根绷着的弦就松了。最后是铁壁，他说他也可以跟着，不说话也行。\n\n' +
       '那天没有人被责怪。很久以后她才明白：一个队伍里最好用的机制，是有人愿意先说「我不懂」。',
     requires: ALL,
@@ -59,7 +59,7 @@ const endings: LetterEnding[] = [
     rating: 'A',
     title: '认账认晚了一步',
     body:
-      '她当着面把「我查了半天也没查懂」问出了口。铁壁接着说，他可以跟着，不说话也行——这句话落在了月见的道歉前面。\n\n' +
+      '她当着面把「我到现在也没弄明白」问出了口。铁壁接着说，他可以跟着，不说话也行——这句话落在了月见的道歉前面。\n\n' +
       '等月见说「是我没奶上」的时候，那句道歉听起来像收尾的场面话，不像一次真的认账。机制最后还是弄明白了，只是谁都没有被安慰到。',
     requires: ALL,
     minSatisfied: 3,
@@ -91,7 +91,7 @@ const endings: LetterEnding[] = [
     rating: 'C',
     title: '那样最好用的机制，那天没有出现',
     body:
-      '铁壁那句「我可以跟着你们吗？我不说话也行」最先出口。一个坦克先说自己可以不出声，队里那股要认错的气就散了。\n\n' +
+      '铁壁那句「我能跟在你们后面吗？保证不出声」最先出口。一个坦克先说自己可以不出声，队里那股要认错的气就散了。\n\n' +
       '月见最后没有认那口锅，她只是说了一句「大家辛苦了」。小星也没有把那句不懂问出口——她把它记在纸上，回去自己查了很久。\n\n' +
       '那把副本打完了。那个机制她后来学会了，只是再想起来的时候，她记不清那天是谁跟她一起打的。',
     requires: ALL,
@@ -129,8 +129,8 @@ export const L02_04: Letter = {
   signature: '——月见',
   blocks: [
     { id: B1, statementId: 'yuejian.sprout.01', draggable: true, homeIndex: 0 },
-    { id: B2, statementId: 'xiaoxing.sprout.05', draggable: true, homeIndex: 1 },
-    { id: B3, statementId: 'tiebi.sprout.03', draggable: true, homeIndex: 2 },
+    { id: B2, statementId: 'xiaoxing.sprout.05b', draggable: true, homeIndex: 1 },
+    { id: B3, statementId: 'tiebi.sprout.03b', draggable: true, homeIndex: 2 },
   ],
   relations,
   endings,

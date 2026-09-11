@@ -51,8 +51,8 @@ const endings: LetterEnding[] = [
     rating: 'S',
     title: '数字被听见了',
     body:
-      '夜语那句话一直挂在最上面，像一个前提：我不说话，知道它开着就够了。\n\n' +
-      '然后是小星——「我会努力的，别不要我。」她打这句话的时候，频道里正刷过几十条招募。\n\n' +
+      '夜语那句话一直挂在最上面，像一个前提：他一句话也不说，看着就够了。\n\n' +
+      '然后是小星——「我会好好学的，别把我一个人留下。」她打这句话的时候，频道里正刷过几十条招募。\n\n' +
       '接着有人接住了它。那句话来自很多年前、来自一间堆着家具的屋子：「我想建一个不踢AFK成员的部队。」它不是对这个女孩说的，可它答的正是她的问题。\n\n' +
       '最后铃兰才把自己那行数字读出来：999+，没有一条是私聊。这一次她读的时候，前面站着一个承诺，和一个终于被接住的人。\n\n' +
       '数字还是那个数字。它第一次不像是她一个人的事了。',
@@ -63,7 +63,7 @@ const endings: LetterEnding[] = [
       { characterId: 'linglan', delta: 2, reason: '她没有把数字咽回去，而是读到了最后' },
       { characterId: 'tiebi', delta: 2, reason: '他那句关于留位置的旧话，第一次真的派上了用场' },
       { characterId: 'xiaoxing', delta: 2, reason: '她把自己最怕的那句话说给了整个频道' },
-      { characterId: 'yeyu', delta: 1, reason: '他那句"知道它开着就够了"成了这一夜的地基' },
+      { characterId: 'yeyu', delta: 1, reason: '他那句"看着就够了"成了这一夜的地基' },
       { characterId: 'yuejian', delta: -1, reason: '她不在这个频道里——人多的地方，她只会去结账' },
     ],
   },
@@ -148,9 +148,9 @@ export const L04_03: Letter = {
     '我盯着那句话看了很久。我想，如果这一屏话能排出另一个顺序，我是不是就不必一个人数这些数字。',
   signature: '——铃兰',
   blocks: [
-    { id: 'L04-03.b1-yeyu-open', statementId: 'yeyu.growth.03', draggable: false, homeIndex: 0 },
+    { id: 'L04-03.b1-yeyu-open', statementId: 'yeyu.growth.03c', draggable: false, homeIndex: 0 },
     { id: B2, statementId: 'linglan.mature.01', draggable: true, homeIndex: 1 },
-    { id: B3, statementId: 'xiaoxing.sprout.06', draggable: true, homeIndex: 2 },
+    { id: B3, statementId: 'xiaoxing.sprout.06c', draggable: true, homeIndex: 2 },
     { id: B4, statementId: 'tiebi.growth.01', draggable: true, homeIndex: 3 },
   ],
   relations,

@@ -50,7 +50,7 @@ const endings: LetterEnding[] = [
     body:
       '月见先开口。她说，大家辛苦了，这把灭了先休息吧——她说得很自然，自然到没有人想起来，这家店里根本没有人在打副本。\n\n' +
       '然后是夜语。有人叫了一声他角色的名字，他下意识回了头。那个动作快过他自己，快到桌上的人都以为他是在应自己的名字。\n\n' +
-      '最后月见站了起来：你们先聊，我去把部队的修理费交了。她走出门口的时候，夜语才反应过来，她说的那支部队也不在这条街上。\n\n' +
+      '最后月见站了起来：「你们先聊，我去把账结了。」她走出门口的时候，夜语才反应过来——这家店里根本没有她要去结的账。\n\n' +
       '三句话排在一起，说的是同一件事——在这个店里，没有一个人用自己真正的名字活着。\n\n' +
       '散场以后铃兰照旧在门口数位置。她数到最后一个人的时候，谁也没有问过她叫什么。',
     requires: ALL,
@@ -100,7 +100,7 @@ const endings: LetterEnding[] = [
     rating: 'C',
     title: '各归各位',
     body:
-      '月见先去交了修理费，回来才说了那句辛苦，夜语最后才回头。\n\n' +
+      '月见先去把账结了，回来才说了那句辛苦，夜语最后才回头。\n\n' +
       '顺序散着，三句话各自成立，也都各自没有被人接住。散场的时候灯还亮着，铃兰把最后一把椅子摆回了原位。',
     requires: ALL,
     minSatisfied: 1,
@@ -154,9 +154,9 @@ export const L04_04: Letter = {
   signature: '——月见',
   blocks: [
     { id: 'L04-04.b1-linglan-host', statementId: 'linglan.mature.03', draggable: false, homeIndex: 0 },
-    { id: B2, statementId: 'yuejian.growth.04', draggable: true, homeIndex: 1 },
+    { id: B2, statementId: 'yuejian.growth.04b', draggable: true, homeIndex: 1 },
     { id: B3, statementId: 'yuejian.growth.01', draggable: true, homeIndex: 2 },
-    { id: B4, statementId: 'yeyu.mature.02', draggable: true, homeIndex: 3 },
+    { id: B4, statementId: 'yeyu.mature.02c', draggable: true, homeIndex: 3 },
   ],
   relations,
   endings,

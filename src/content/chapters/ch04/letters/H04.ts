@@ -5,12 +5,12 @@ import type { KeyRelation, Letter, LetterEnding } from '../../../../engine/types
  * 空间锚点 rp-venue / 阶段 成熟期（见 STORY-BIBLE §5.3）。出场：夜语 · 铃兰 · 小星。
  *
  * 机制：本信**必须**同时用到两处 `high`（跨阶段 + 跨空间）——
- * 小星豆芽期那句「零式是什么，我能来吗？」和铃兰豆芽期那句「加个好友吧？我拉你进通讯贝。」
+ * 小星豆芽期那句「零式是什么，我这种新人可以去吗？」和铃兰豆芽期那句「认识一下吧？我带你进通讯贝。」
  * 都是从很久以前、另一个地方被拖进这家店的。
  *
  * 回响的触发条件是**唯一一个排列**：
  *   小星的问题 → 铃兰的邀请 → 夜语的自白（B3 → B4 → B2）
- * 两条 `high` 全部落地，且那句「分不清IC和OOC了」被排在最后——
+ * 两条 `high` 全部落地，且那句「分不清角色内和角色外了」被排在最后——
  * 先问的人还没进来，拉人的人还不知道自己会留下什么，而那个已经分不清的人最后才开口。
  * 这时玩家看见的不是三个人的故事，是同一个人的三个时点。
  *
@@ -53,9 +53,9 @@ const endings: LetterEnding[] = [
     rating: 'echo',
     title: '回响 · 面具后面的那个人一直在',
     body:
-      '「零式是什么，我能来吗？」\n\n' +
+      '「零式是什么，我这种新人可以去吗？」\n\n' +
       '——问这句话的人，那时候连这个名字都念不利索。她还站在门口，还没有进来。\n\n' +
-      '「加个好友吧？我拉你进通讯贝。」\n\n' +
+      '「认识一下吧？我带你进通讯贝。」\n\n' +
       '——说这句话的人，那时候以为自己只是在收集人。她不知道很多年以后，会有一个人的话靠这句话活着。\n\n' +
       '「分不清哪一句是自己的了。」\n\n' +
       '——说这句话的人最后才开口。他戴着面具走了太久，久到忘了自己是从哪一步开始的。\n\n' +
@@ -146,14 +146,14 @@ export const H04: Letter = {
   preamble:
     '倾听者：\n\n' +
     '这封信不是我写下的。是有人把它放在那家店的桌上——两张纸，字迹不一样，一张很旧，一张是新的。\n\n' +
-    '旧的那张上，是一个刚进来的人问的一句话。新的那张上，是一句「加个好友吧」。\n\n' +
+    '旧的那张上，是一个刚进来的人问的一句话。新的那张上，是一句「认识一下吧」。\n\n' +
     '我把它们和我的那句话放在了一起。你要是愿意，替我排一排：一个还在外面的人、一个把别人拉进来的人、一个不知道自己算哪一种的人——他们的话谁先说，会决定什么。',
   signature: '——夜语',
   blocks: [
-    { id: 'H04.b1-yeyu-turn', statementId: 'yeyu.mature.02', draggable: false, homeIndex: 0 },
+    { id: 'H04.b1-yeyu-turn', statementId: 'yeyu.mature.02d', draggable: false, homeIndex: 0 },
     { id: B2, statementId: 'yeyu.mature.01', draggable: true, homeIndex: 1 },
-    { id: B3, statementId: 'xiaoxing.sprout.02', draggable: true, homeIndex: 2 },
-    { id: B4, statementId: 'linglan.sprout.01', draggable: true, homeIndex: 3 },
+    { id: B3, statementId: 'xiaoxing.sprout.02d', draggable: true, homeIndex: 2 },
+    { id: B4, statementId: 'linglan.sprout.01c', draggable: true, homeIndex: 3 },
   ],
   relations,
   endings,

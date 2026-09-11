@@ -10,7 +10,7 @@ import type { KeyRelation, Letter, LetterEnding } from '../../../../engine/types
  *
  * 两条路互斥：
  *   S —— 晨曦放下身段（说自己也被人带过）、小星接过火并说出谢谢，
- *        代价是远山那句"好友列表全灰了"被留在门外（r4 被 forbids）。
+ *        代价是远山那句"好友列表一个都没剩下"被留在门外（r4 被 forbids）。
  *   A —— 远山的话被带进来，并且紧跟在队长开口之后（他被听见了），
  *        代价是晨曦没能把位置交出去（他自己停在原地）。
  *
@@ -33,11 +33,11 @@ const R5 = 'L05-01.rel.yuanshan-heard-first'
 const relations: KeyRelation[] = [
   // 晨曦把自己那句「我当初也是躺尸过来的」从副本里挪进了这封信——他不再是队长，是先来的那个人
   { id: R1, kind: 'displacedInto', subject: B2, tier: 'microshift' },
-  // 小星把那句「我当初也是被人拖过本的」说了出来——她终于站到了被需要的那一侧
+  // 小星把那句「我也是被人一路带过来的」说了出来——她终于站到了被需要的那一侧
   { id: R2, kind: 'displacedInto', subject: B4, tier: 'microshift' },
   // 先谢过当年被带的日子，再说自己要走
   { id: R3, kind: 'precedes', subject: B4, object: B3 },
-  // 远山那句「好友列表全灰了」被带进这封信
+  // 远山那句「好友列表一个都没剩下」被带进这封信
   { id: R4, kind: 'displacedInto', subject: B5, tier: 'high' },
   // 队长的第一句之后，紧跟着的是远山——他被第一个听见
   { id: R5, kind: 'adjacent', subject: B1, object: B5 },
@@ -71,7 +71,7 @@ const endings: LetterEnding[] = [
     rating: 'A',
     title: '先被听见的那个人',
     body:
-      '队长刚开口，远山那句「好友列表全灰了」就跟在后面。没有人接话，频道静了很久。\n\n' +
+      '队长刚开口，远山那句「好友列表一个都没剩下」就跟在后面。没有人接话，频道静了很久。\n\n' +
       '于是那一晚谈的不再是交棒，而是谁还记得当初的人。晨曦把那封信收了起来，第二天照常点名、照常排本——队长那一栏还是他的名字。\n\n' +
       '远山后来上线得勤了一些。他还是不怎么说话，但每次都会进频道挂着。',
     requires: [R4, R5],
@@ -145,8 +145,8 @@ export const L05_01: Letter = {
     { id: B1, statementId: 'chenxi.mentor.03', draggable: false, homeIndex: 0 },
     { id: B2, statementId: 'chenxi.mentor.01', draggable: true, homeIndex: 1 },
     { id: B3, statementId: 'xiaoxing.mentor.03', draggable: true, homeIndex: 2 },
-    { id: B4, statementId: 'xiaoxing.mentor.01', draggable: true, homeIndex: 3 },
-    { id: B5, statementId: 'yuanshan.mature.01', draggable: true, homeIndex: 4 },
+    { id: B4, statementId: 'xiaoxing.mentor.01b', draggable: true, homeIndex: 3 },
+    { id: B5, statementId: 'yuanshan.mature.01d', draggable: true, homeIndex: 4 },
   ],
   relations,
   endings,

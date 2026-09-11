@@ -1,7 +1,7 @@
 import type { KeyRelation, Letter, LetterEnding } from '../../../../engine/types'
 
 /**
- * L04-02「IC与OOC」
+ * L04-02「角色内与角色外」
  * 空间锚点 rp-venue / 阶段 成熟期（见 STORY-BIBLE §5.3）。出场：夜语 · 铃兰。
  *
  * 一封信里只有两个人：一个把面具戴成了脸，一个从来不用面具。
@@ -51,7 +51,7 @@ const endings: LetterEnding[] = [
     body:
       '夜语先说：他分不清哪一句是自己的了。说完他自己愣了一下，像没料到这句话真的出了口。\n\n' +
       '然后他才说出那个让他发现的瞬间——有人叫角色的名字，他下意识回了头。应得太快了，快过他的判断。\n\n' +
-      '最后是铃兰。她把一句很久以前说过的话放在这里：频道建好了，随时来聊天。那句话当年不是对他说的，可现在它落在了一个刚摘下面具的人面前，正好。\n\n' +
+      '最后是铃兰。她把一句很久以前说过的话放在这里：我把跨服通讯贝开好了，随时来坐。那句话当年不是对他说的，可现在它落在了一个刚摘下面具的人面前，正好。\n\n' +
       '那天晚上店里只有两个人。夜语走的时候，第一次没有用角色的语气说再见。',
     requires: ALL,
     minSatisfied: 4,
@@ -127,7 +127,7 @@ const fallbackEnding: LetterEnding = {
 export const L04_02: Letter = {
   id: 'L04-02',
   chapterId: 'ch04',
-  title: 'IC与OOC',
+  title: '角色内与角色外',
   anchor: { phase: 'mature', space: 'rp-venue' },
   preamble:
     '倾听者：\n\n' +
@@ -137,9 +137,9 @@ export const L04_02: Letter = {
   signature: '——夜语',
   blocks: [
     { id: 'L04-02.b1-linglan-wait', statementId: 'linglan.growth.02', draggable: false, homeIndex: 0 },
-    { id: B2, statementId: 'yeyu.mature.01', draggable: true, homeIndex: 1 },
-    { id: B3, statementId: 'linglan.growth.01', draggable: true, homeIndex: 2 },
-    { id: B4, statementId: 'yeyu.mature.02', draggable: true, homeIndex: 3 },
+    { id: B2, statementId: 'yeyu.mature.01c', draggable: true, homeIndex: 1 },
+    { id: B3, statementId: 'linglan.growth.01c', draggable: true, homeIndex: 2 },
+    { id: B4, statementId: 'yeyu.mature.02b', draggable: true, homeIndex: 3 },
   ],
   relations,
   endings,

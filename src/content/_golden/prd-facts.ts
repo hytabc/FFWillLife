@@ -43,7 +43,7 @@ export const GOLDEN_CHARACTERS: readonly GoldenCharacter[] = [
       sprout: '我能当MT吗？我怕仇恨拉不稳。',
       growth: '钢铁月环我来吃，你们放心输出。',
       mature: '首周过不了没关系，别把亲友打散了。',
-      mentor: '豆芽慢慢来，我当初也是躺尸过来的。',
+      mentor: '别嫌慢，我当初也是躺尸过来的。',
     },
   },
   {
@@ -98,7 +98,7 @@ export const GOLDEN_CHARACTERS: readonly GoldenCharacter[] = [
     signatureLines: {
       sprout: '有人能带我打日随吗？豆芽求带。',
       growth: '我想建一个不踢AFK成员的部队。',
-      mature: 'FC不是我一个人的，房子也是大家的。',
+      mature: '部队不是我一个人的，房子也是大家的。',
       mentor: '欢迎回部队，房屋永远给你留了位置。',
     },
   },
@@ -137,7 +137,7 @@ export const GOLDEN_CHARACTERS: readonly GoldenCharacter[] = [
     signatureLines: {
       sprout: '总有一天我要首周过绝本。',
       growth: '首杀拿到了，logs全金。',
-      mature: '好友列表全灰了，FC房子也被回收了。',
+      mature: '好友列表全灰了，部队的房子也被回收了。',
       mentor: '回来就好，副本没变，我带你复健。',
     },
   },
@@ -155,7 +155,7 @@ export const GOLDEN_CHARACTERS: readonly GoldenCharacter[] = [
     signatureLines: {
       sprout: '我想开个RP号，扮演一个不存在的自己。',
       growth: '在RP店里，我比在现实里更像自己。',
-      mature: 'RP标挂久了，分不清IC和OOC了。',
+      mature: 'RP标挂久了，分不清角色内和角色外了。',
       mentor: '你的RP角色，也是你光之战士的一部分。',
     },
   },
@@ -172,7 +172,7 @@ export const GOLDEN_CHARACTERS: readonly GoldenCharacter[] = [
     ],
     signatureLines: {
       sprout: '加个好友吧？我拉你进通讯贝。',
-      growth: 'CWLS建好了，随时来聊天。',
+      growth: '跨服通讯贝建好了，随时来聊天。',
       mature: '通讯贝消息999+，但没人私聊我。',
       mentor: '不用一直说话，挂机在一起也是一种陪伴。',
     },

@@ -135,7 +135,7 @@ export const H02: Letter = {
   signature: '——晨曦',
   blocks: [
     { id: B1, statementId: 'xiaoxing.sprout.01', draggable: false, homeIndex: 0 },
-    { id: B3, statementId: 'tiebi.growth.01', draggable: true, homeIndex: 1 },
+    { id: B3, statementId: 'tiebi.growth.01c', draggable: true, homeIndex: 1 },
     { id: B2, statementId: 'chenxi.growth.04', draggable: true, homeIndex: 2 },
     { id: B4, statementId: 'chenxi.growth.05', draggable: true, homeIndex: 3 },
   ],

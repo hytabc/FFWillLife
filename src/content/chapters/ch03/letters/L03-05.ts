@@ -56,11 +56,11 @@ const endings: LetterEnding[] = [
     title: '他们把这一晚玩完了，才回头去看那座山',
     body:
       '铁壁把话说得很轻松：「低保谁缺谁拿，我不急这一件。」\n\n' +
-      '他还说过一句：「部队房重新装修过了，AFK 的人也给留着位置。」——这句话本来是说在部队房里的，那天晚上被他带进了副本，听起来像是对远山说的。\n\n' +
+      '他还说过一句：「那间屋子我重新收拾过了，离线的名字还钉在墙上。」——这句话本来是说在部队房里的，那天晚上被他带进了副本，听起来像是对远山说的。\n\n' +
       '铃兰在频道里留着：「你们忙你们的，我留在频道里等着。」——她不进去打，她只是等着，这让远山想起很多年前有人也是这么等他的。\n\n' +
-      '夜语那天说了两句。一句是那家店的灯是暖的，一句是那个几乎没有声音的频道里，知道它开着就够了。她说完就坐回自己的位置上去了——那两句留在这个晚上，像是替这一晚点了一盏灯。\n\n' +
+      '夜语那天说了两句。一句是那家店的灯是暖的，一句是那个跨服通讯贝里他从不吭声、知道它亮着就行。她说完就坐回自己的位置上去了——那两句留在这个晚上，像是替这一晚点了一盏灯。\n\n' +
       '他们打完了一晚上。灭了两把，也过了两把。\n\n' +
-      '到最后，远山才把当年那句搬出来：「首杀是我们的，logs全金。」——这句话他憋了很久，现在说出口，不像战报，倒像把一样很重的东西放回架子上。\n\n' +
+      '到最后，远山才把当年那句搬出来：「首杀是我们打的，那天的记录到现在还没人破。」——这句话他憋了很久，现在说出口，不像战报，倒像把一样很重的东西放回架子上。\n\n' +
       '副本确实没变。变的是他终于可以不站在最前面，也能把这一晚过完。',
     requires: ALL,
     minSatisfied: 6,
@@ -113,7 +113,7 @@ const endings: LetterEnding[] = [
     rating: 'C',
     title: '他在开场就提了当年',
     body:
-      '进本之前，远山就把那句搬了出来：「首杀是我们的，logs全金。」\n\n' +
+      '进本之前，远山就把那句搬了出来：「首杀是我们打的，那天的记录到现在还没人破。」\n\n' +
       '这句话一出来，这趟副本就变成了另一件事。铁壁还是照常分装备、照常报机制，只是他说话的间隔变长了。他这些年做的其实就是"不踢 AFK 的人"这一件事——现在那个 AFK 的人回来了，站在他面前，说着他已经听不懂的话。\n\n' +
       '铃兰在频道里待了一会儿就安静了。她本来是那个到处加好友、到处喊人的女孩。\n\n' +
       '那一晚结束以后，他们把队伍解散了。铁壁说「辛苦了」。他说这三个字的时候，声音里有一种很难被指认的累。\n\n' +
@@ -155,11 +155,11 @@ export const L03_05: Letter = {
   signature: '——远山',
   blocks: [
     { id: B1, statementId: 'tiebi.mature.03', draggable: true, homeIndex: 0 },
-    { id: B4, statementId: 'yuanshan.growth.01', draggable: true, homeIndex: 1 },
+    { id: B4, statementId: 'yuanshan.growth.01c', draggable: true, homeIndex: 1 },
     { id: B2, statementId: 'linglan.growth.03', draggable: true, homeIndex: 2 },
     { id: B3, statementId: 'yeyu.growth.01', draggable: false, homeIndex: 3 },
-    { id: B5, statementId: 'yeyu.growth.03', draggable: false, homeIndex: 4 },
-    { id: B6, statementId: 'tiebi.mature.02', draggable: true, homeIndex: 5 },
+    { id: B5, statementId: 'yeyu.growth.03b', draggable: false, homeIndex: 4 },
+    { id: B6, statementId: 'tiebi.mature.02b', draggable: true, homeIndex: 5 },
   ],
   relations,
   endings,

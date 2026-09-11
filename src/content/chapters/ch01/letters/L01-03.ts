@@ -111,7 +111,7 @@ export const L01_03: Letter = {
     '我想知道，那天如果我们说话的顺序换一换，那个差一点的人，会不会还有机会。',
   signature: '——晨曦',
   blocks: [
-    { id: 'L01-03.b1-chenxi', statementId: 'chenxi.growth.05', draggable: false, homeIndex: 0 },
+    { id: 'L01-03.b1-chenxi', statementId: 'chenxi.growth.05b', draggable: false, homeIndex: 0 },
     { id: B2, statementId: 'liefeng.growth.05', draggable: true, homeIndex: 1 },
     { id: B3, statementId: 'liefeng.growth.06', draggable: true, homeIndex: 2 },
     { id: B4, statementId: 'chenxi.growth.06', draggable: true, homeIndex: 3 },

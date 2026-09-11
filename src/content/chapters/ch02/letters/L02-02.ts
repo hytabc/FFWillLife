@@ -4,7 +4,7 @@ import type { KeyRelation, Letter, LetterEnding } from '../../../../engine/types
  * L02-02「日随偶遇」
  * 空间锚点 dungeon / 阶段 豆芽期（见 STORY-BIBLE §5.3）。出场：小星 · 铁壁 · 铃兰。
  *
- * 主题：她一个人排了日常，排到一个陌生人。同一句话——「我可以跟着吗？」——
+ * 主题：她一个人排了日常，排到一个陌生人。同一句话——「能带我一个吗？」——
  * 打在频道里是一次无人应答的试探，当着面问出口才是真的把脚迈进去。
  * B2 的原始空间是通讯贝，信件锚点在副本，搬动它即落 `microshift` 档。
  *
@@ -42,7 +42,7 @@ const endings: LetterEnding[] = [
     rating: 'S',
     title: '她当面问出了那句话',
     body:
-      '进本之前，她在队伍前面把那句「那个……我可以跟着吗」问出了口。没有人笑她。\n\n' +
+      '进本之前，她在队伍前面把那句「那个……能带我一个吗」问出了口。没有人笑她。\n\n' +
       '打着打着，那个不认识的坦克倒下了，爬起来的第一句话是道歉——道歉得比她还熟练。她忽然就不那么怕了。出本之前，铃兰在队伍里数了一遍人，问还有谁没进来。\n\n' +
       '那天她没有被落下。唯一不同的是：这一次她不是在频道里等着被谁看见，是她自己走上前去问的。',
     requires: ALL,
@@ -75,7 +75,7 @@ const endings: LetterEnding[] = [
     rating: 'B',
     title: '三句话都在，只是各说各的',
     body:
-      '坦克倒下了，爬起来道了歉；铃兰在队伍里数了一遍人；她那句「我可以跟着吗」是在频道里打出来的，等有人看见的时候，副本已经打完了。\n\n' +
+      '坦克倒下了，爬起来道了歉；铃兰在队伍里数了一遍人；她那句「能带我一个吗」是在频道里打出来的，等有人看见的时候，副本已经打完了。\n\n' +
       '三句话都发生过。只是它们没有挨在一起，所以谁也没有接住谁。',
     requires: ALL,
     minSatisfied: 2,
@@ -91,7 +91,7 @@ const endings: LetterEnding[] = [
     rating: 'C',
     title: '一个人打完的那把日常',
     body:
-      '铃兰先数了一遍人，坦克接着倒下了——那句「我可以跟着吗」始终打在频道里，没有人回。\n\n' +
+      '铃兰先数了一遍人，坦克接着倒下了——那句「能带我一个吗」始终打在频道里，没有人回。\n\n' +
       '那天她还是跟着打完了。出本的时候队伍解散得很快，快到她连一句谢谢都没来得及打出来。',
     requires: ALL,
     minSatisfied: 0,
@@ -127,7 +127,7 @@ export const L02_02: Letter = {
   signature: '——小星',
   blocks: [
     { id: B1, statementId: 'tiebi.sprout.02', draggable: true, homeIndex: 0 },
-    { id: B2, statementId: 'xiaoxing.sprout.03', draggable: true, homeIndex: 1 },
+    { id: B2, statementId: 'xiaoxing.sprout.03b', draggable: true, homeIndex: 1 },
     { id: B3, statementId: 'linglan.sprout.03', draggable: true, homeIndex: 2 },
   ],
   relations,

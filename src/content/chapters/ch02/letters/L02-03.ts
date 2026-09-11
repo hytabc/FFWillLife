@@ -47,8 +47,8 @@ const endings: LetterEnding[] = [
     rating: 'S',
     title: '那句话是在招募板前面说的',
     body:
-      '晨曦把他写在频道里的那行字搬到了招募板前面，当着等在那里的几个人说了出来：「招募我写好了，明天继续。灭一次不算什么。」\n\n' +
-      '同样一行字，写在频道里只是一条通知，谁都可以当作没看见；当着面说出来，它就变成了一句「我们明天还在」。接着铁壁说，他发招募，来的人一个都不赶。最后晨曦说，他不是最厉害的那个，但他是最不会走的那个。\n\n' +
+      '晨曦把他写在频道里的那行字搬到了招募板前面，当着等在那里的几个人说了出来：「这一版招募我不改条件，就写一句：明天还在。」\n\n' +
+      '同样一行字，写在频道里只是一条通知，谁都可以当作没看见；当着面说出来，它就变成了一句「我们明天还在」。接着铁壁说，他发招募，来的人一个都不赶。最后晨曦说，他可能是最笨的那个，但肯定最不会先走。\n\n' +
       '小星站在旁边听着。她手里那张写满了陌生名字的纸，被她攥得紧了一点。',
     requires: ALL,
     minSatisfied: 4,
@@ -64,7 +64,7 @@ const endings: LetterEnding[] = [
     rating: 'A',
     title: '先有一份招募，才有承诺',
     body:
-      '晨曦的那行字到底还是当着面说了出来，铁壁也说了他不赶人。只是晨曦那句「我是最不会走的那个」说得早了一些——它落在铁壁的原则前面，听起来像他自己给自己壮胆。\n\n' +
+      '晨曦的那行字到底还是当着面说了出来，铁壁也说了他不赶人。只是晨曦那句「肯定最不会先走」说得早了一些——它落在铁壁的原则前面，听起来像他自己给自己壮胆。\n\n' +
       '招募板上多了一个名字。那天晚上没有人退队。',
     requires: ALL,
     minSatisfied: 3,
@@ -80,7 +80,7 @@ const endings: LetterEnding[] = [
     rating: 'B',
     title: '都说了，只是各说各的',
     body:
-      '铁壁在招募板上写了「来的人我一个都不赶」，晨曦在频道里写了「招募我写好了，明天继续」，而那个新人的问题，最后是写在一张纸上递过去的。\n\n' +
+      '铁壁在招募板上写了「来的人我一个都不赶」，晨曦在频道里写了「明天还在」，而那个新人的问题，最后是写在一张纸上递过去的。\n\n' +
       '三句话都写在纸上、发在频道里，唯独没有一句是当面说的。招募板前面那盏灯亮了一整晚，没有派上什么用场。',
     requires: ALL,
     minSatisfied: 2,
@@ -96,7 +96,7 @@ const endings: LetterEnding[] = [
     rating: 'C',
     title: '招募板前面没有说出口的话',
     body:
-      '晨曦那句「我不是最厉害的那个，但我是最不会走的那个」先出了口。它落在铁壁的原则前面，听起来像是在替自己求一个位置。铁壁当时没有接话，后来也没有再提那天的事。\n\n' +
+      '晨曦那句「我可能是最笨的那个，但肯定最不会先走」先出了口。它落在铁壁的原则前面，听起来像是在替自己求一个位置。铁壁当时没有接话，后来也没有再提那天的事。\n\n' +
       '招募板上的名字换了又换。那个新人的问题，一直没有人回答。',
     requires: ALL,
     minSatisfied: 0,
@@ -131,10 +131,10 @@ export const L02_03: Letter = {
     '我把那几天说过的几句抄在这里。我想知道，换一个顺序说，那个问题会不会不那么难问出口。',
   signature: '——铁壁',
   blocks: [
-    { id: B1, statementId: 'xiaoxing.sprout.02', draggable: false, homeIndex: 0 },
+    { id: B1, statementId: 'xiaoxing.sprout.02b', draggable: false, homeIndex: 0 },
     { id: B3, statementId: 'tiebi.growth.02', draggable: true, homeIndex: 1 },
-    { id: B2, statementId: 'chenxi.growth.04', draggable: true, homeIndex: 2 },
-    { id: B4, statementId: 'chenxi.growth.05', draggable: true, homeIndex: 3 },
+    { id: B2, statementId: 'chenxi.growth.04d', draggable: true, homeIndex: 2 },
+    { id: B4, statementId: 'chenxi.growth.05c', draggable: true, homeIndex: 3 },
   ],
   relations,
   endings,

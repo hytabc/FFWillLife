@@ -34,7 +34,7 @@ const relations: KeyRelation[] = [
   { id: R3, kind: 'precedes', subject: B3, object: B2 },
   // 「我也还在学」被挪出了原位
   { id: R4, kind: 'displacedInto', subject: B2, tier: 'microshift' },
-  // 整封信最后落在「欢迎回家」
+  // 整封信最后落在「回来吧，门没锁」
   { id: R5, kind: 'last', subject: B4 },
 ]
 
@@ -48,7 +48,7 @@ const endings: LetterEnding[] = [
     body:
       '烈风先说了那句话：我现在只和自己比。说完他自己也笑了——这句话五年前的他听不进去，现在说出来，倒像是替所有人松了绑。\n\n' +
       '远山跟着承认：挂上导师标不代表什么都懂，我也还在学。他说这话的时候正在带一个比他当年更慌的新人，说到一半停住了，因为他想起来的不是机制，是很多年前自己站在同一个位置上的样子。\n\n' +
-      '那天结束的时候，铁壁只说了一句「欢迎回家」。远山在部队房里站了很久，把每一个房间都走了一遍——房子重新装修过，离线的名字还留在名单上。\n\n' +
+      '那天结束的时候，铁壁只说了一句「回来吧，门没锁」。远山在部队房里站了很久，把每一个房间都走了一遍——房子重新装修过，离线的名字还留在名单上。\n\n' +
       '他终于也变成了那个说「回来就好」的人。',
     requires: ALL,
     minSatisfied: 5,
@@ -56,7 +56,7 @@ const endings: LetterEnding[] = [
     tendency: [
       { characterId: 'yuanshan', delta: 2, reason: '他终于变成那个说「回来就好」的人' },
       { characterId: 'liefeng', delta: 1, reason: '他把尺子收回自己身上，替所有人松了绑' },
-      { characterId: 'tiebi', delta: 1, reason: '他只说了「欢迎回家」，位置一直空着' },
+      { characterId: 'tiebi', delta: 1, reason: '他只说了「回来吧，门没锁」，位置一直空着' },
     ],
   },
   {
@@ -64,14 +64,14 @@ const endings: LetterEnding[] = [
     rating: 'A',
     title: '回来就好',
     body:
-      '铁壁的那句「欢迎回家」落在了最后，像是给整晚盖了个章。远山没说什么大道理，只是把队伍重新组起来，带着那个新人打了一遍。\n\n' +
+      '铁壁的那句「回来吧，门没锁」落在了最后，像是给整晚盖了个章。远山没说什么大道理，只是把队伍重新组起来，带着那个新人打了一遍。\n\n' +
       '他带得不算好。中间灭了两次，第三次过的时候，频道里没有人说话，只有人开始鼓掌——那是他第一次觉得，被需要和被记住是两件事，而后者更难，也更值得。',
     requires: ALL,
     minSatisfied: 4,
     priority: 20,
     tendency: [
       { characterId: 'yuanshan', delta: 1, reason: '他重新组了队，带新人打了一遍' },
-      { characterId: 'tiebi', delta: 1, reason: '他把「欢迎回家」说在了最后' },
+      { characterId: 'tiebi', delta: 1, reason: '他把「回来吧，门没锁」说在了最后' },
       { characterId: 'liefeng', delta: 0, reason: '他那天只是路过，没有多说' },
     ],
   },
@@ -152,7 +152,7 @@ export const L05_06: Letter = {
     { id: B1, statementId: 'yuanshan.mentor.01', draggable: false, homeIndex: 0 },
     { id: B2, statementId: 'yuanshan.mentor.03', draggable: true, homeIndex: 1 },
     { id: B3, statementId: 'liefeng.mature.03', draggable: true, homeIndex: 2 },
-    { id: B4, statementId: 'tiebi.mentor.01', draggable: true, homeIndex: 3 },
+    { id: B4, statementId: 'tiebi.mentor.01b', draggable: true, homeIndex: 3 },
     { id: B5, statementId: 'liefeng.mature.01', draggable: true, homeIndex: 4 },
   ],
   relations,

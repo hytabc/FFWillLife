@@ -7,7 +7,7 @@ import { makeCharacterEndings } from '../_shared/endings'
  * 他最后要学的不是演谁，是谁在演。
  * 黑话频率：1/5 → 2/5 → 3/5 → 2/5 —— 全作唯一**不随成长上升**的角色。
  *   他的术语是诊断工具，不是身份认同：成长期为止他只用"世界内语言"，
- *   直到成熟期才第一次需要用游戏外的词来描述自己的困境（RP / IC / OOC）。
+ *   直到成熟期才第一次需要用游戏外的词来描述自己的困境（RP / 角色内 / 角色外）。
  */
 
 const statements: Statement[] = [
@@ -109,7 +109,7 @@ const statements: Statement[] = [
     characterId: 'yeyu',
     phase: 'mature',
     space: 'rp-venue',
-    text: 'RP标挂久了，分不清IC和OOC了。',
+    text: 'RP标挂久了，分不清角色内和角色外了。',
     carries: ['confide', 'grieve'],
     terms: ['rp', 'ic-ooc'],
     isDisplaceable: true,
@@ -191,6 +191,127 @@ const statements: Statement[] = [
     carries: ['encourage', 'boundary'],
     terms: ['nuannuan'],
     isDisplaceable: false,
+  },
+
+  // ---- 同一句话不再跨信重复：以下为各信专用版本，carries 与原句一致 ----
+  {
+    id: 'yeyu.growth.03b',
+    characterId: 'yeyu',
+    phase: 'growth',
+    space: 'rp-venue',
+    text: '那个跨服通讯贝里我从不吭声，知道它亮着就行。',
+    carries: ['withdraw', 'reassure'],
+    terms: ['cwls'],
+    isDisplaceable: false,
+  },
+  {
+    id: 'yeyu.growth.03c',
+    characterId: 'yeyu',
+    phase: 'growth',
+    space: 'rp-venue',
+    text: '那个跨服通讯贝里我一句话也不说，看着就够了。',
+    carries: ['withdraw', 'reassure'],
+    terms: ['cwls'],
+    isDisplaceable: false,
+  },
+  {
+    id: 'yeyu.mature.01b',
+    characterId: 'yeyu',
+    phase: 'mature',
+    space: 'rp-venue',
+    text: '角色内和角色外，我已经分不清了。',
+    carries: ['confide', 'grieve'],
+    terms: ['rp', 'ic-ooc'],
+    isDisplaceable: true,
+    variants: [
+      {
+        kind: 'transform',
+        targetPhase: 'mentor',
+        reinterpretedText: '「分不清」这三个字，后来成了他坐在新人对面的底气——因为他就是从那里一步一步走出来的。',
+        carries: ['encourage', 'reassure'],
+      },
+      {
+        kind: 'high',
+        reinterpretedText: '它落进一封很早以前的信里，被一个还没戴上面具的人读到——那个人还没学会逃，就先读到了摘不下来的样子。',
+        carries: ['grieve', 'confide'],
+      },
+    ],
+  },
+  {
+    id: 'yeyu.mature.01c',
+    characterId: 'yeyu',
+    phase: 'mature',
+    space: 'rp-venue',
+    text: '挂着角色的名字太久，我快忘了自己本来叫什么。',
+    carries: ['confide', 'grieve'],
+    terms: ['rp', 'ic-ooc'],
+    isDisplaceable: true,
+    variants: [
+      {
+        kind: 'transform',
+        targetPhase: 'mentor',
+        reinterpretedText: '「分不清」这三个字，后来成了他坐在新人对面的底气——因为他就是从那里一步一步走出来的。',
+        carries: ['encourage', 'reassure'],
+      },
+      {
+        kind: 'high',
+        reinterpretedText: '它落进一封很早以前的信里，被一个还没戴上面具的人读到——那个人还没学会逃，就先读到了摘不下来的样子。',
+        carries: ['grieve', 'confide'],
+      },
+    ],
+  },
+  {
+    id: 'yeyu.mature.02b',
+    characterId: 'yeyu',
+    phase: 'mature',
+    space: 'rp-venue',
+    text: '那家店里有人喊了一声我角色的名字，我回头了。',
+    carries: ['confide', 'grieve'],
+    terms: ['rp-dian'],
+    isDisplaceable: false,
+  },
+  {
+    id: 'yeyu.mature.02c',
+    characterId: 'yeyu',
+    phase: 'mature',
+    space: 'rp-venue',
+    text: '灯下面有人叫那个名字，我下意识就应了。',
+    carries: ['confide', 'grieve'],
+    terms: ['rp-dian'],
+    isDisplaceable: false,
+  },
+  {
+    id: 'yeyu.mature.02d',
+    characterId: 'yeyu',
+    phase: 'mature',
+    space: 'rp-venue',
+    text: '有人用角色的名字叫我，我应得太快了。',
+    carries: ['confide', 'grieve'],
+    terms: ['rp-dian'],
+    isDisplaceable: false,
+  },
+  {
+    id: 'yeyu.mentor.01b',
+    characterId: 'yeyu',
+    phase: 'mentor',
+    space: 'rp-venue',
+    text: '你演的那个人，也是你自己的一部分。',
+    carries: ['encourage', 'recruit'],
+    terms: ['rp'],
+    isDisplaceable: true,
+    variants: [
+      {
+        kind: 'transform',
+        targetPhase: 'mature',
+        reinterpretedText: '在还分不清自己是谁的时候读到这句话，它像是一句辩护：两副嗓子都是你的，不必挑一个。',
+        carries: ['reassure', 'confide'],
+      },
+      {
+        kind: 'high',
+        reinterpretedText: '在一个不属于这个时空的信件里，这句话被另一个人读到——它替那个人说出了他一直说不出口的那个词：整合。',
+        carries: ['encourage', 'recruit'],
+      },
+    ],
   },
 ]
 

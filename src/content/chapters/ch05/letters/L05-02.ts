@@ -152,7 +152,7 @@ export const L05_02: Letter = {
   signature: '——月见',
   blocks: [
     { id: B1, statementId: 'yuejian.mature.01', draggable: false, homeIndex: 0 },
-    { id: B2, statementId: 'yuejian.mature.03', draggable: true, homeIndex: 1 },
+    { id: B2, statementId: 'yuejian.mature.03b', draggable: true, homeIndex: 1 },
     { id: B3, statementId: 'liefeng.mentor.01', draggable: true, homeIndex: 2 },
     { id: B4, statementId: 'chenxi.mature.01', draggable: true, homeIndex: 3 },
     { id: B5, statementId: 'xiaoxing.mature.01', draggable: true, homeIndex: 4 },

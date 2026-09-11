@@ -108,9 +108,9 @@ export const H01: Letter = {
   signature: '——未来的你',
   blocks: [
     { id: B1, statementId: 'xiaoxing.sprout.03', draggable: false, homeIndex: 0 },
-    { id: B2, statementId: 'xiaoxing.sprout.04', draggable: true, homeIndex: 1 },
+    { id: B2, statementId: 'xiaoxing.sprout.04b', draggable: true, homeIndex: 1 },
     { id: B3, statementId: 'xiaoxing.sprout.05', draggable: true, homeIndex: 2 },
-    { id: B4, statementId: 'xiaoxing.sprout.06', draggable: true, homeIndex: 3 },
+    { id: B4, statementId: 'xiaoxing.sprout.06b', draggable: true, homeIndex: 3 },
   ],
   relations,
   endings,

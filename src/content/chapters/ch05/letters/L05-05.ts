@@ -32,11 +32,11 @@ const relations: KeyRelation[] = [
   { id: R1, kind: 'displacedInto', subject: B2, tier: 'transform' },
   // 「对不起，我又倒下了……我是不是很没用？」被拖进同一封信（high）
   { id: R2, kind: 'displacedInto', subject: B3, tier: 'high' },
-  // 「我当初也是被人拖过本的」被重新摆了一遍
+  // 「我也是被人拉进本的」被重新摆了一遍
   { id: R3, kind: 'displacedInto', subject: B4, tier: 'microshift' },
   // 「你问绝本是什么的样子」被重新摆了一遍
   { id: R4, kind: 'displacedInto', subject: B5, tier: 'microshift' },
-  // 先说出"我也被人拖过"，才有人敢承认自己还在求人
+  // 先说出"我也是被人拉进本的"，才有人敢承认自己还在求人
   { id: R5, kind: 'precedes', subject: B4, object: B2 },
 ]
 
@@ -48,7 +48,7 @@ const endings: LetterEnding[] = [
     rating: 'S',
     title: '薪火·远行',
     body:
-      '她先说了自己也是被人拖过本的——那句话从她嘴里说出来的时候，已经不是安慰，是履历。\n\n' +
+      '她先说了自己也是被人拉进本的——那句话从她嘴里说出来的时候，已经不是安慰，是履历。\n\n' +
       '然后她才问：是谁在副本门口等？是谁连一句"我能来吗"都要打好几遍？她把这句问话记了下来，一个字都没有改，因为那就是多年前的她。\n\n' +
       '她没有留下那个人，也没有让对方留下。她只是把当年别人给她的那个「能」字原样递了出去——然后自己收拾东西，往更远的地方走了。\n\n' +
       '火被她带走了。她没有留在原地，可被她点过的人，会接着点下一个人。',
@@ -82,7 +82,7 @@ const endings: LetterEnding[] = [
     rating: 'B',
     title: '两句话错开了',
     body:
-      '她说了自己被人拖过本，对方也说了自己是不是很没用——两句话都出口了，只是中间隔着一整晚。\n\n' +
+      '她说了自己也是被人拉进本的，对方也说了自己是不是很没用——两句话都出口了，只是中间隔着一整晚。\n\n' +
       '那个新人在副本门口等到了很晚，最后还是自己排了进去。小星第二天才知道这件事。',
     requires: ALL,
     minSatisfied: 3,
@@ -151,10 +151,10 @@ export const L05_05: Letter = {
     '这封信我想写给那个站在城里、看着我、还没敢抬头的自己。如果你也曾经问过同样的问题，请收下这句：我当初也这样。',
   signature: '——小星',
   blocks: [
-    { id: B1, statementId: 'chenxi.mentor.01', draggable: false, homeIndex: 0 },
-    { id: B2, statementId: 'tiebi.sprout.01', draggable: true, homeIndex: 1 },
-    { id: B3, statementId: 'tiebi.sprout.02', draggable: true, homeIndex: 2 },
-    { id: B4, statementId: 'xiaoxing.mentor.01', draggable: true, homeIndex: 3 },
+    { id: B1, statementId: 'chenxi.mentor.01b', draggable: false, homeIndex: 0 },
+    { id: B2, statementId: 'tiebi.sprout.01c', draggable: true, homeIndex: 1 },
+    { id: B3, statementId: 'tiebi.sprout.02b', draggable: true, homeIndex: 2 },
+    { id: B4, statementId: 'xiaoxing.mentor.01c', draggable: true, homeIndex: 3 },
     { id: B5, statementId: 'xiaoxing.mentor.02', draggable: true, homeIndex: 4 },
   ],
   relations,

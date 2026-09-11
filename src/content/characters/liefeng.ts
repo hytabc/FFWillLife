@@ -221,6 +221,98 @@ const statements: Statement[] = [
     terms: [],
     isDisplaceable: false,
   },
+
+  // ---- 同一句话不再跨信重复：以下为各信专用版本，carries 与原句一致 ----
+  {
+    id: 'liefeng.growth.01b',
+    characterId: 'liefeng',
+    phase: 'growth',
+    space: 'linkshell',
+    text: '炒股炒不明白就别来零式，我可不陪谁渡劫。',
+    carries: ['reproach'],
+    terms: ['chaogu', 'lingshi', 'dujie'],
+    isDisplaceable: true,
+    variants: [
+      {
+        kind: 'transform',
+        targetPhase: 'mentor',
+        reinterpretedText: '一个已经不再看重日志分数的人，重读自己当年这句话，只留下沉默。',
+        carries: ['reminisce', 'grieve'],
+      },
+      {
+        kind: 'microshift',
+        targetSpace: 'fc-house',
+        reinterpretedText: '同样的话，在部队房里当着所有人的面说出来——那就不只是苛刻，是羞辱。',
+        carries: ['reproach'],
+      },
+    ],
+  },
+  {
+    id: 'liefeng.growth.02b',
+    characterId: 'liefeng',
+    phase: 'growth',
+    space: 'dungeon',
+    text: '为了炒股多贪了一轮，结果输出没打满。',
+    carries: ['confide'],
+    terms: ['chaogu'],
+    isDisplaceable: false,
+  },
+  {
+    id: 'liefeng.growth.03b',
+    characterId: 'liefeng',
+    phase: 'growth',
+    space: 'dungeon',
+    text: '跟不上就别怪我话说得难听。',
+    carries: ['reproach'],
+    terms: [],
+    isDisplaceable: false,
+  },
+  {
+    id: 'liefeng.growth.04b',
+    characterId: 'liefeng',
+    phase: 'growth',
+    space: 'linkshell',
+    text: '这把循环没断，logs应该还过得去。',
+    carries: ['persist', 'boast'],
+    terms: ['logs'],
+    isDisplaceable: true,
+    variants: [
+      {
+        kind: 'transform',
+        targetPhase: 'mentor',
+        reinterpretedText: '他把这句话说给一个刚被骂哭的新人听——只不过这一次，后半句是「你也做得到」。',
+        carries: ['encourage', 'reminisce'],
+      },
+    ],
+  },
+  {
+    id: 'liefeng.mentor.01b',
+    characterId: 'liefeng',
+    phase: 'mentor',
+    space: 'dungeon',
+    text: '你这把打得比我当年干净多了。',
+    carries: ['encourage'],
+    terms: [],
+    isDisplaceable: true,
+    variants: [
+      {
+        kind: 'transform',
+        targetPhase: 'mature',
+        reinterpretedText: '他把这句话说给一个正被疲惫压垮的治疗听——那是在说"你已经做得够好了"。',
+        carries: ['encourage', 'reassure'],
+      },
+    ],
+  },
+  {
+    id: 'liefeng.mentor.02b',
+    characterId: 'liefeng',
+    phase: 'mentor',
+    space: 'city',
+    text: '别把输赢看得太重，玩得下去才行。',
+    carries: ['encourage'],
+    terms: [],
+    isDisplaceable: false,
+  },
 ]
 
 export const liefeng: Character = {

@@ -48,7 +48,7 @@ const endings: LetterEnding[] = [
     rating: 'S',
     title: '他把那个名字带回了家',
     body:
-      '那家店的灯是暖的。铁壁在那栋房子里说过「房子也是大家的」，晨曦在频道里说过「我是想大家还能一起玩」——这两句话被搬到灯下面来听，忽然都不像安慰，像证据：证明他确实有过那样的日子。\n\n' +
+      '那家店的灯是暖的。铁壁在那栋房子里说过「这房子从来不是我的」，晨曦在频道里说过「我是想大家还能一起玩」——这两句话被搬到灯下面来听，忽然都不像安慰，像证据：证明他确实有过那样的日子。\n\n' +
       '然后是台上那位表演者的回答：「我可以扮演任何人。」\n\n' +
       '这句话本来是一个新人第一次发现表演有多好玩时说的。被拖到这个晚上，它变成了另一件事——今夜真的有一个人，顶着他死去的友谊的名字，活得好好的。\n\n' +
       '倾听者，只有你注意到了这件事：散场报名字的时候，那个名字和远山很多年前说出过的那个名字一模一样。\n\n' +
@@ -104,7 +104,7 @@ const endings: LetterEnding[] = [
     rating: 'C',
     title: '他先说了自己那份名单',
     body:
-      '「好友列表全灰了……连部队的房子也被回收了。」\n\n' +
+      '「名单上再也没有人上线了……那间房子也换过主人了。」\n\n' +
       '在自己的话出口之后，那家店里的一切都变成了表演：铁壁说房子是大家的——可他连房子都没有了；晨曦说想大家还能一起玩——可没有大家了；台上那位说「我可以扮演任何人」——多好，谁都行，就不是自己。\n\n' +
       '他把这一整晚读成了一场戏，而他是唯一没有角色的人。\n\n' +
       '倾听者，只有你看见了：散场报名字的时候，那行字里有一个名字，和远山旧名单上的一个名字一模一样。他低头走出去了，没有看见。',
@@ -144,8 +144,8 @@ export const L03_03: Letter = {
     '那几句从店里飘过来的话我都抄下来了。你可以把它们拖来拖去——反正那家店里，谁都在演别人。',
   signature: '——远山',
   blocks: [
-    { id: B1, statementId: 'yuanshan.mature.01', draggable: true, homeIndex: 0 },
-    { id: B2, statementId: 'tiebi.mature.01', draggable: true, homeIndex: 1 },
+    { id: B1, statementId: 'yuanshan.mature.01c', draggable: true, homeIndex: 0 },
+    { id: B2, statementId: 'tiebi.mature.01b', draggable: true, homeIndex: 1 },
     { id: B3, statementId: 'chenxi.mature.03', draggable: true, homeIndex: 2 },
     { id: B4, statementId: 'yeyu.sprout.01', draggable: true, homeIndex: 3 },
   ],

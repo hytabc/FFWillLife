@@ -6,7 +6,7 @@ import type { KeyRelation, Letter, LetterEnding } from '../../../../engine/types
  *
  * **共存关系（PRD §5.5「时间之外」）**：`L05-07.rel.swap-mentor-lines`
  *   —— 夜语与铃兰的**导师期语句互换**。这条关系 id 覆盖的是"互换"里
- *   铃兰那一侧（「倾听本身就是一种陪伴」被拖进这封信，Δt = 1、Δs = 1 → `high`）；
+ *   铃兰那一侧（「陪着一个人，本身就是在听」被拖进这封信，Δt = 1、Δs = 1 → `high`）；
  *   夜语那一侧由 `L05-07.rel.yeyu-mentor-into-mature`（transform）承担。
  *   顶档要求两侧同时成立——单边的错位不是互换。
  *
@@ -28,7 +28,7 @@ const R4 = 'L05-07.rel.listening-before-character'
 const R5 = 'L05-07.rel.gpose-placed'
 
 const relations: KeyRelation[] = [
-  // ★ 共存关系：铃兰导师期那句「倾听本身就是一种陪伴」被拖进这封信（high）
+  // ★ 共存关系：铃兰导师期那句「陪着一个人，本身就是在听」被拖进这封信（high）
   { id: R1, kind: 'displacedInto', subject: B3, tier: 'high' },
   // 互换的另一侧：夜语导师期那句「你的RP角色，也是你光之战士的一部分」被拖进成熟期（transform）
   { id: R2, kind: 'displacedInto', subject: B2, tier: 'transform' },
@@ -49,7 +49,7 @@ const endings: LetterEnding[] = [
     title: '时间之外',
     body:
       '两个人说的话在这一晚互换了位置。\n\n' +
-      '铃兰先说：倾听本身就是一种陪伴。这句话被放到这里，听起来不像安慰，像是一个人对另一个人说"我一直在"。夜语于是接住了自己那句话：你的角色，也是你的一部分——他本来就打算用这句话去接住别人，结果先被接住的是他自己。\n\n' +
+      '铃兰先说：陪着一个人，本身就是在听。这句话被放到这里，听起来不像安慰，像是一个人对另一个人说"我一直在"。夜语于是接住了自己那句话：你的角色，也是你的一部分——他本来就打算用这句话去接住别人，结果先被接住的是他自己。\n\n' +
       '小星在旁边看着，忽然懂了：她在游戏里长成了另一个人，而那个人就是她本人；夜语在游戏里长成了另一个人，然后花了很久才敢承认那也是他。\n\n' +
       '散场之前他们拍了一张合照。没有人笑，照片里三个人的影子都在同一个方向。',
     requires: ALL,
@@ -153,9 +153,9 @@ export const L05_07: Letter = {
   blocks: [
     { id: B1, statementId: 'xiaoxing.mature.02', draggable: false, homeIndex: 0 },
     { id: B2, statementId: 'yeyu.mentor.01', draggable: true, homeIndex: 1 },
-    { id: B3, statementId: 'linglan.mentor.01', draggable: true, homeIndex: 2 },
+    { id: B3, statementId: 'linglan.mentor.01b', draggable: true, homeIndex: 2 },
     { id: B4, statementId: 'linglan.mentor.03', draggable: true, homeIndex: 3 },
-    { id: B5, statementId: 'xiaoxing.mature.01', draggable: true, homeIndex: 4 },
+    { id: B5, statementId: 'xiaoxing.mature.01b', draggable: true, homeIndex: 4 },
   ],
   relations,
   endings,

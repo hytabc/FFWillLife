@@ -114,7 +114,7 @@ export const L01_02: Letter = {
     '我一直在想，那天晚上我们说的话，如果换一个顺序说，他会不会还在这里。',
   signature: '——晨曦',
   blocks: [
-    { id: 'L01-02.b1-chenxi', statementId: 'chenxi.growth.04', draggable: false, homeIndex: 0 },
+    { id: 'L01-02.b1-chenxi', statementId: 'chenxi.growth.04b', draggable: false, homeIndex: 0 },
     { id: B2, statementId: 'liefeng.growth.01', draggable: true, homeIndex: 1 },
     { id: B3, statementId: 'yuejian.growth.03', draggable: true, homeIndex: 2 },
     { id: B4, statementId: 'liefeng.growth.04', draggable: true, homeIndex: 3 },

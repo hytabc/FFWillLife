@@ -54,8 +54,8 @@ const endings: LetterEnding[] = [
     body:
       '最上面那句话没有动过：那个跨服频道里，我几乎不说话，知道它开着就够了。\n\n' +
       '下面是夜语从别处带来的一句话——这套幻化我搭了一整晚，穿上它，我连走路的样子都变了。他说的是一个把自己穿成另一个人的人。\n\n' +
-      '再下面是远山的：首杀是我们的，logs全金。他说的是另一个时期的自己，那时候他相信只要赢下来，就不会有人离开。\n\n' +
-      '最后是铃兰的那行数字：999+，没有一条是私聊。\n\n' +
+      '再下面是远山的：那年首杀是我们的，榜单上一排全金。他说的是另一个时期的自己，那时候他相信只要赢下来，就不会有人离开。\n\n' +
+      '最后是铃兰的那行字：一屏消息九百多条，没有一条是找我的。\n\n' +
       '三句话排在一起，说的其实是同一件事——他们都曾用某种方式证明自己值得被留下来。而最上面那句话说的恰好相反：不用证明，开着就够了。\n\n' +
       '那天晚上频道里一个人也没有说话。铃兰把它挂在旁边，去做别的事。回来的时候，有一个人的名字还亮着。',
     requires: ALL,
@@ -142,9 +142,9 @@ export const L04_05: Letter = {
   signature: '——铃兰',
   blocks: [
     { id: 'L04-05.b1-yeyu-quiet', statementId: 'yeyu.growth.03', draggable: false, homeIndex: 0 },
-    { id: B2, statementId: 'linglan.mature.01', draggable: true, homeIndex: 1 },
+    { id: B2, statementId: 'linglan.mature.01b', draggable: true, homeIndex: 1 },
     { id: B3, statementId: 'yeyu.growth.02', draggable: true, homeIndex: 2 },
-    { id: B4, statementId: 'yuanshan.growth.01', draggable: true, homeIndex: 3 },
+    { id: B4, statementId: 'yuanshan.growth.01d', draggable: true, homeIndex: 3 },
   ],
   relations,
   endings,

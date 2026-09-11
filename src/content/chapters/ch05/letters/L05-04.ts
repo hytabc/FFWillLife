@@ -34,7 +34,7 @@ const relations: KeyRelation[] = [
   { id: R1, kind: 'displacedInto', subject: B3, tier: 'high' },
   // 「我可以跟着你们吗？我不说话也行。」被挪出了原位
   { id: R2, kind: 'displacedInto', subject: B2, tier: 'microshift' },
-  // 「加个好友吧？我拉你进通讯贝。」被挪出了原位
+  // 「做个朋友吧？我拉你进通讯贝。」被挪出了原位
   { id: R3, kind: 'displacedInto', subject: B4, tier: 'microshift' },
   // 先听见有人说"我当初也是被人拖过本的"，铁壁才敢承认自己只想安静地跟着
   { id: R4, kind: 'precedes', subject: B3, object: B2 },
@@ -68,7 +68,7 @@ const endings: LetterEnding[] = [
     rating: 'A',
     title: '有人愿意留一个位置',
     body:
-      '铃兰的邀请排在了这封信的最前面——「加个好友吧？我拉你进通讯贝」。铁壁盯着那行字看了很久，第一次回了「好」。\n\n' +
+      '铃兰的邀请排在了这封信的最前面——「做个朋友吧？我拉你进通讯贝」。铁壁盯着那行字看了很久，第一次回了「好」。\n\n' +
       '小星那句话也落进来了，只是落得浅。他心里松动了一点，还不足以让他承认自己怕。但那天晚上，他没有再一个人站在副本门口。',
     requires: ALL,
     minSatisfied: 4,
@@ -153,11 +153,11 @@ export const L05_04: Letter = {
     '如果那几句别人递给我的话，能早一点落在我手里就好了。',
   signature: '——铁壁',
   blocks: [
-    { id: B1, statementId: 'tiebi.sprout.01', draggable: false, homeIndex: 0 },
-    { id: B2, statementId: 'tiebi.sprout.03', draggable: true, homeIndex: 1 },
+    { id: B1, statementId: 'tiebi.sprout.01b', draggable: false, homeIndex: 0 },
+    { id: B2, statementId: 'tiebi.sprout.03c', draggable: true, homeIndex: 1 },
     { id: B3, statementId: 'xiaoxing.mentor.01', draggable: true, homeIndex: 2 },
-    { id: B4, statementId: 'linglan.sprout.01', draggable: true, homeIndex: 3 },
-    { id: B5, statementId: 'linglan.sprout.03', draggable: true, homeIndex: 4 },
+    { id: B4, statementId: 'linglan.sprout.01d', draggable: true, homeIndex: 3 },
+    { id: B5, statementId: 'linglan.sprout.03b', draggable: true, homeIndex: 4 },
   ],
   relations,
   endings,

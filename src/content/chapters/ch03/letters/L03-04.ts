@@ -58,7 +58,7 @@ const endings: LetterEnding[] = [
       '小星是第一个开口的。她一进门就把话说得很干脆：「固定队要是缺人，就喊我，我练熟了！」——她如今是别人的队友了，这句话说出来的时候，她谁都没有看。\n\n' +
       '第一次灭完，是烈风接的话：「灭就灭了，下一把。」——没有谁被数落，没有人为自己的手生道歉。\n\n' +
       '她还站在标点的位置上：「这个机制我熟，我来标A点。」她把标点一个一个标出来，标得比这一趟需要的还细——那是一个人在替别人留出犯错的余地。\n\n' +
-      '到这时候，远山才敢把当年的话拿出来说：「首杀是我们的，logs全金。」他说这句的时候，声音里没有得意——那是一个人在确认自己曾经真的活过那一段。他还说了「那会儿首周我们就过了，之后全是伐木」——这句话原本是战报，今夜读起来是：后来那些一起伐木的人，一个都不在了。\n\n' +
+      '到这时候，远山才敢把当年的话拿出来说：「那把首杀是我们拿的，记录全金。」他说这句的时候，声音里没有得意——那是一个人在确认自己曾经真的活过那一段。他还说了「那会儿首周我们就过了，之后全是伐木」——这句话原本是战报，今夜读起来是：后来那些一起伐木的人，一个都不在了。\n\n' +
       '三个人在副本门口站了很久。\n\n' +
       '复健的结果不是他找回了当年的手速。是他终于肯走在队伍的最后面，等一个走得慢的人。',
     requires: ALL,
@@ -130,7 +130,7 @@ const endings: LetterEnding[] = [
     title: '他在墓前做了一次复健',
     body:
       '那两句当年的话，他一句都没有挪，就这么摆在了这一晚的最前面。\n\n' +
-      '「首杀是我们的，logs全金。」——话落在最前面，等于告诉在场的人：你们的这一晚，不配和我当年比。\n\n' +
+      '「那把首杀是我们拿的，记录全金。」——话落在最前面，等于告诉在场的人：你们的这一晚，不配和我当年比。\n\n' +
       '小星报完机制的手还停在半空里。她小声问了一句「要不要再来一把」，他没有听见。\n\n' +
       '烈风什么都没说。他后来下线得很安静，安静得连「辛苦了」都没有回。那种疲惫不是生气，是比生气更难修的东西——他见过太多把队伍当成纪念堂的人了。\n\n' +
       '远山那天晚上在副本门口站到天快亮。他终于明白，他回不去的不是副本。\n\n' +
@@ -172,7 +172,7 @@ export const L03_04: Letter = {
   signature: '——远山',
   blocks: [
     { id: 'L03-04.b1-xiaoxing-call-me', statementId: 'xiaoxing.growth.02', draggable: false, homeIndex: 0 },
-    { id: B2, statementId: 'yuanshan.growth.01', draggable: true, homeIndex: 1 },
+    { id: B2, statementId: 'yuanshan.growth.01b', draggable: true, homeIndex: 1 },
     { id: B3, statementId: 'liefeng.mature.02', draggable: true, homeIndex: 2 },
     { id: B4, statementId: 'yuanshan.growth.02', draggable: true, homeIndex: 3 },
     { id: B5, statementId: 'xiaoxing.growth.01', draggable: true, homeIndex: 4 },

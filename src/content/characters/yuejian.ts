@@ -199,6 +199,128 @@ const statements: Statement[] = [
     terms: [],
     isDisplaceable: false,
   },
+
+  // ---- 同一句话不再跨信重复：以下为各信专用版本，carries 与原句一致 ----
+  {
+    id: 'yuejian.growth.01b',
+    characterId: 'yuejian',
+    phase: 'growth',
+    space: 'dungeon',
+    text: '先到这儿吧，今晚谁也别往心里去。',
+    carries: ['reassure'],
+    terms: [],
+    isDisplaceable: true,
+    variants: [
+      {
+        kind: 'transform',
+        targetPhase: 'mentor',
+        reinterpretedText: '当年那句"先休息吧"是说给别人听的；现在她说给自己听。',
+        carries: ['boundary'],
+      },
+    ],
+  },
+  {
+    id: 'yuejian.growth.01c',
+    characterId: 'yuejian',
+    phase: 'growth',
+    space: 'dungeon',
+    text: '都歇一歇，明天再说这把的事。',
+    carries: ['reassure'],
+    terms: [],
+    isDisplaceable: true,
+    variants: [
+      {
+        kind: 'transform',
+        targetPhase: 'mentor',
+        reinterpretedText: '当年那句"先休息吧"是说给别人听的；现在她说给自己听。',
+        carries: ['boundary'],
+      },
+    ],
+  },
+  {
+    id: 'yuejian.growth.03b',
+    characterId: 'yuejian',
+    phase: 'growth',
+    space: 'linkshell',
+    text: '今天就到这儿，好不好？',
+    carries: ['reassure'],
+    terms: [],
+    isDisplaceable: false,
+  },
+  {
+    id: 'yuejian.growth.04b',
+    characterId: 'yuejian',
+    phase: 'growth',
+    space: 'linkshell',
+    text: '你们先聊，我去把账结了。',
+    carries: ['reassure'],
+    terms: [],
+    isDisplaceable: true,
+    variants: [
+      {
+        kind: 'transform',
+        targetPhase: 'mature',
+        reinterpretedText: '她终于发现，有些人习惯用「我去做点事」来代替「我不想说话」。而她自己就是其中之一。',
+        carries: ['boundary', 'reminisce'],
+      },
+    ],
+  },
+  {
+    id: 'yuejian.mature.01b',
+    characterId: 'yuejian',
+    phase: 'mature',
+    space: 'dungeon',
+    text: '别什么都推给H1，我也有撑不住的时候。',
+    carries: ['boundary', 'confide'],
+    terms: ['h1'],
+    isDisplaceable: true,
+    variants: [
+      {
+        kind: 'transform',
+        targetPhase: 'sprout',
+        reinterpretedText: '一个刚学会加血的新人，把这句话读成了"原来拒绝是可以的"。',
+        carries: ['encourage'],
+      },
+      {
+        kind: 'high',
+        reinterpretedText: '在庆功宴上说这句话，所有人都安静了——原来她一直在硬撑。',
+        carries: ['confide', 'grieve'],
+      },
+    ],
+  },
+  {
+    id: 'yuejian.mature.01c',
+    characterId: 'yuejian',
+    phase: 'mature',
+    space: 'dungeon',
+    text: '别把H1当成不会累的人，我也有撑不住的时候。',
+    carries: ['boundary', 'confide'],
+    terms: ['h1'],
+    isDisplaceable: true,
+    variants: [
+      {
+        kind: 'transform',
+        targetPhase: 'sprout',
+        reinterpretedText: '一个刚学会加血的新人，把这句话读成了"原来拒绝是可以的"。',
+        carries: ['encourage'],
+      },
+      {
+        kind: 'high',
+        reinterpretedText: '在庆功宴上说这句话，所有人都安静了——原来她一直在硬撑。',
+        carries: ['confide', 'grieve'],
+      },
+    ],
+  },
+  {
+    id: 'yuejian.mature.03b',
+    characterId: 'yuejian',
+    phase: 'mature',
+    space: 'linkshell',
+    text: '你们有没有想过，我也希望有人问一句我累不累。',
+    carries: ['confide', 'boundary'],
+    terms: [],
+    isDisplaceable: false,
+  },
 ]
 
 export const yuejian: Character = {

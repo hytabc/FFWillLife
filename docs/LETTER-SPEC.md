@@ -85,8 +85,9 @@ npx vitest run src/__tests__/continuity/endings.test.ts
 
 - `preamble`（信件旁白）**不得使用需要注释的黑话** —— 校验器 2 会扫。通用语言。
 - 黑话只出现在**语句块的台词**里，且必须在该块所属 `Statement` 的 `terms` 字段中标注。
-- **不要新增 Statement** —— 台词全部从 `src/content/characters/*.ts` 里挑，用 `statementId` 引用。
-  同一个 Statement 可以被多封信引用（这本来就是本作的题眼：同一句话在不同信里被重新排列）。
+- **台词的归属**：台词集中在 `src/content/characters/*.ts`，用 `statementId` 引用。
+  **每一句台词只属于一封信**（R4：不跨信复用）——需要"同一个意思"在另一封信里出现时，
+  在对应角色文件里新增一条措辞不同的 Statement，并保持 `carries` / 阶段 / 空间与语义一致。
 
 ### 挑台词的规则
 
