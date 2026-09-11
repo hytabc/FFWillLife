@@ -100,6 +100,17 @@ export function nextLetter(
   return undefined
 }
 
+/**
+ * 整条主线是否已经走完 —— 全部可见信件都已结算。
+ *
+ * 「通关前不显示评级」的判断依据：角色面板与倾听者手记都要等它变真，
+ * 才把真实评级与牵制结果交给玩家。
+ */
+export function isFlowComplete(settled: Record<LetterId, SettledLetter>): boolean {
+  const summary = progressSummary(settled)
+  return summary.visible > 0 && summary.done >= summary.visible
+}
+
 /** 全局进度，用于顶栏显示。 */
 export function progressSummary(settled: Record<LetterId, SettledLetter>): {
   done: number

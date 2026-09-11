@@ -690,6 +690,14 @@ button {
   font-weight: 700;
 }
 
+/* 通关前：评级锁定，只显示"未知" */
+.roster__rating--locked {
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: var(--ink-faint);
+}
+
 .roster__role {
   margin: 6px 0 8px;
   font-size: 11px;
@@ -708,23 +716,6 @@ button {
   height: 100%;
   border-radius: 999px;
   transition: width 0.3s ease;
-}
-
-.roster__pressure {
-  margin: 8px 0 0;
-  font-size: 10.5px;
-  color: var(--ink-faint);
-  line-height: 1.6;
-}
-
-.roster__pressure em {
-  font-style: normal;
-  color: #d9636b;
-  margin-left: 4px;
-}
-
-.roster__pressure--in em {
-  color: #e0a35c;
 }
 
 /* ==========================================================================
@@ -1190,6 +1181,38 @@ button {
 
 .finale__nopressure {
   font-size: 12px;
+  color: var(--ink-faint);
+}
+
+/* 通关前的手记：只有一段说明与进度，不剧透任何评级 */
+.finale__locked {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+  padding: 32px 30px;
+  max-width: 520px;
+  font-family: var(--font);
+  font-size: 14.5px;
+  line-height: 2;
+  color: var(--ink-dim);
+}
+
+.finale__locked p {
+  margin: 0;
+}
+
+.finale__locked-title {
+  font-size: 17px;
+  letter-spacing: 0.14em;
+  color: var(--gold);
+}
+
+.finale__locked-progress {
+  margin-top: 6px;
+  font-size: 11.5px;
+  letter-spacing: 0.1em;
   color: var(--ink-faint);
 }
 

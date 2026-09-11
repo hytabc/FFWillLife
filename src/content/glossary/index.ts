@@ -1058,20 +1058,7 @@ export const glossary: GlossaryEntry[] = [
       '卡位、bug 或某些特殊路线会把人送出发地图边界，到达一片只剩模型与贴图、没有 NPC 也没有音乐的空白区域。因为空旷、重复、安静得诡异，玩家把它叫作「后室」或「异空间」。',
     example: '我们卡bug跑到后室异空间去了，一个人都没有。',
     linkedCharacterIds: [],
-    relatedTermIds: ['chort'],
+    relatedTermIds: [],
     memeRef: '后室异空间',
-  },
-  {
-    id: 'chort',
-    term: '7.5版本Chort',
-    pinyin: 'chort',
-    category: 'meme',
-    brief: '7.5 版本副本里的 BOSS，也成了玩家之间的口头梗。',
-    detail:
-      '7.5 版本 100 级副本 The Clyteum 中段的 BOSS，名字在斯拉夫语里意为「恶魔」。因为名字与造型都足够怪，上线后很快被玩家做成梗，用来形容版本初期那些离谱、说不清的场面。',
-    example: '这周的本排得跟Chort一样，全员神志不清。',
-    linkedCharacterIds: [],
-    relatedTermIds: ['houshi'],
-    memeRef: '7.5版本Chort',
   },
 ]

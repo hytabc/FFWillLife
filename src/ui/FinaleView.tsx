@@ -1,5 +1,6 @@
 import { characters } from '../content'
 import { computeFinale, describePressure } from '../game/finale'
+import { isFlowComplete, progressSummary } from '../game/progress'
 import type { CharacterOutcome } from '../engine/types'
 import { useGameStore } from '../store/gameStore'
 import { RATING_COLOR, ratingLabel } from './rating'
@@ -10,6 +11,9 @@ import { RATING_COLOR, ratingLabel } from './rating'
  * 这一屏存在的意义是让"结局相互牵制"这件事**看得见**——
  * PRD 的核心承诺是"不存在全员 S 的完美解"，
  * 如果玩家永远看不到是谁把谁压下去了，那句承诺就只是一句设定。
+ *
+ * 但这份揭晓要留到通关：全部可见信件结算之前，手记一律锁着，
+ * 免得角色评级与牵制关系在玩家还没自己摸索出角色关联时就被剧透。
  */
 
 function OutcomeRow({ outcome }: { outcome: CharacterOutcome }) {
@@ -42,6 +46,30 @@ function OutcomeRow({ outcome }: { outcome: CharacterOutcome }) {
 export function FinaleView({ onClose }: { onClose: () => void }) {
   const tendencyEvents = useGameStore((s) => s.tendencyEvents)
   const settledLetters = useGameStore((s) => s.settledLetters)
+
+  // 通关之前不揭晓角色评级与牵制结果：手记只告诉你"还没走完"。
+  if (!isFlowComplete(settledLetters)) {
+    const progress = progressSummary(settledLetters)
+    return (
+      <div className="finale" role="dialog" aria-label="倾听者手记">
+        <header className="finale__head">
+          <h2>倾听者手记</h2>
+          <button type="button" className="finale__close" onClick={onClose}>
+            ✕
+          </button>
+        </header>
+        <div className="finale__locked">
+          <p className="finale__locked-title">这一周目还没有走完。</p>
+          <p>
+            角色结局与「谁压住了谁」要等全部可见信件都结算之后，才会随这份手记一并展开。
+          </p>
+          <p className="finale__locked-progress">
+            已结算 {progress.done} / {progress.visible} 封
+          </p>
+        </div>
+      </div>
+    )
+  }
 
   const finale = computeFinale(tendencyEvents, settledLetters)
   const pressures = describePressure(finale.trace)

@@ -21,7 +21,10 @@
       "Shell(cd /private/tmp/commandcode-501/-Users-hytabc-PythonProject-ffwilllife/57d88b90-e9c4-4e0e-9330-d5ed344d41da/scratchpad && node -e ' const d = JSON.parse(require(\"fs\").readFileSync(\"inventory.json\",\"utf8\")); const trim = s => s.replace(/[。！？…，、]+$/,\"\"); for (const s of d.statements) { if (s.usedIn.length<2) continue; const core = trim(s.text); const hits=[]; for (const l of d.letterDump) { let n=0; const scan = t => { let i=0; while((i=t.indexOf(core,i))!==-1){n++;i+=core.length;} }; scan(l.preamble); for (const e of l.endings){ scan(e.body); scan(e.title); for(const tr of e.tendency) scan(tr.reason); } if(n>0) hits.push(l.id+\"(\"+n+\")\"); } console.log(`${s.usedIn.length}x ${s.id} [${s.usedIn.join(\",\")}] quotes=[${hits.join(\", \")}]`); } ')",
       "Shell(npx vitest run src/__tests__/continuity 2 >& 1)",
       "Shell(node -e  const d = JSON.parse(require(\"fs\").readFileSync(\"/private/tmp/commandcode-501/-Users-hytabc-PythonProject-ffwilllife/57d88b90-e9c4-4e0e-9330-d5ed344d41da/scratchpad/inventory.json\",\"utf8\")); console.log(\"statements:\", d.statements.length, \"reused:\", d.reused.length); for (const s of d.reused) console.log(\" REUSED\", s.id, JSON.stringify(s.usedIn)); console.log(\"sharedPrefix:\", JSON.stringify(d.sharedPrefix)); )",
-      "Shell(npx vitest run 2 >& 1)"
+      "Shell(npx vitest run 2 >& 1)",
+      "Shell(ls ~/Library/Caches/ms-playwright 2>/dev/null; npx playwright --version 2>/dev/null)",
+      "Shell(SHOT_DIR=\"$COMMANDCODE_SCRATCHPAD\" node \"$COMMANDCODE_SCRATCHPAD/verify.mjs\")",
+      "Shell(node -e \"console.log(require.resolve('playwright'))\" 2>/dev/null; node -e \"const p=require('playwright/package.json'); console.log(JSON.stringify({main:p.main,module:p.module,exports:p.exports},null,1))\")"
     ],
     "deny": [],
     "defaultMode": "default"

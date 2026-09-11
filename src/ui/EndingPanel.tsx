@@ -14,9 +14,9 @@ interface Props {
 /**
  * 右侧结算面板。
  *
- * 拖动时显示**实时预览**（评级会怎么变）。点下「让这件事发生」后，
- * 先进入约一秒的「世界线改写」演出——期间编排被锁住、按钮不可再点，
- * 然后才揭晓正文与这封信改变了谁。这一秒的留白是有意的：
+ * 拖动时**不剧透**：评级与结局都显示为未知，玩家只知道世界线被自己改动了。
+ * 点下「让这件事发生」后，先进入约一秒的「世界线改写」演出——期间编排被锁住、
+ * 按钮不可再点，然后才揭晓正文与这封信改变了谁。这一秒的留白是有意的：
  * 它让"我的改动真的落到了世界线上"变成一个能被感知的动作，
  * 而不是一次瞬间的状态切换。
  */
@@ -53,7 +53,10 @@ export function EndingPanel({ live }: Props) {
   }
 
   const shown = settled ?? live
-  const color = RATING_COLOR[shown.ending.rating]
+  // 排列尚未落定（含「世界线改写」演出中）时，评级与结局一律显示为未知：
+  // 玩家能感知自己改动了世界线，但改动的后果要等提交之后才揭晓。
+  const revealed = settled !== null
+  const color = revealed ? RATING_COLOR[shown.ending.rating] : 'var(--ink-faint)'
   const displaced = shown.misplacements.filter((m) => m.kind !== 'none' && m.kind !== 'reorder')
 
   return (
@@ -63,11 +66,15 @@ export function EndingPanel({ live }: Props) {
       aria-busy={settling}
     >
       <div className="panel__rating">
-        <span className="panel__rating-mark">{ratingLabel(shown.ending.rating)}</span>
-        <span className="panel__rating-word">{shown.ending.title}</span>
+        <span className="panel__rating-mark">{revealed ? ratingLabel(shown.ending.rating) : '？'}</span>
+        <span className="panel__rating-word">{revealed ? shown.ending.title : '结局未知'}</span>
       </div>
 
-      <p className="panel__meaning">{RATING_MEANING[shown.ending.rating]}</p>
+      <p className="panel__meaning">
+        {revealed
+          ? RATING_MEANING[shown.ending.rating]
+          : '世界线尚未落定——提交之后，才知道它会走向哪里。'}
+      </p>
 
       {displaced.length > 0 && (
         <div className="panel__displacement">
