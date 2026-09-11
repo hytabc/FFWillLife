@@ -78,6 +78,13 @@ page.on('pageerror', (e) => errors.push(`pageerror: ${e.message}`))
 await page.goto(BASE, { waitUntil: 'networkidle' })
 await page.waitForSelector('.letter__blocks .block')
 
+// 首次进入会自动弹出游玩教程；先关掉，否则它的遮罩会挡住后续所有点击。
+// 关闭会写入偏好，之后的 reload 不会再弹。
+if ((await page.locator('.tutorial').count()) > 0) {
+  await page.locator('.tutorial__close').click()
+  await page.waitForSelector('.tutorial', { state: 'detached' })
+}
+
 log('=== 1. 初始状态 ===')
 log('信件标题:', await page.locator('.letter__title').innerText())
 log('锚点:', flat(await page.locator('.letter__anchor').innerText()))
@@ -143,7 +150,8 @@ await moveDraggable(page, 0, 1) // 摆出一个非初始排列
 const preview = await readRating(page)
 log('结算前预览:', preview.mark, '·', preview.word)
 await page.locator('button.primary').click()
-await page.waitForTimeout(250)
+// 结算会先演出约一秒的「世界线改写」，正文要等演出结束才出现
+await page.waitForSelector('.panel__body')
 log('结算正文:', flat(await page.locator('.panel__body').innerText()).slice(0, 76), '…')
 const tendency = await page.locator('.panel__tendency li').allInnerTexts()
 log('角色倾向变化:')

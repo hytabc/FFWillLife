@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Shell(ls node_modules > /dev/null 2>&1 && echo \"node_modules present\" || echo \"need install\")",
+      "Shell(npx vite --port 5199 --strictPort)",
+      "Shell(curl -s -o /dev/null -w \"%{http_code}\\n\" http://localhost:5199)",
+      "Shell(mkdir:*)",
+      "Shell(node scripts/_shot.mjs http://localhost:5199 /tmp/ffwilllife-shots 1460 1000)",
+      "Shell(node scripts/_shot.mjs http://localhost:5199 /tmp/ffwilllife-shots 1000 900)",
+      "Shell(node scripts/_measure.mjs http://localhost:5199)",
+      "Shell(npx tsc --noEmit 2 >& 1)",
+      "Shell(npm:*)",
+      "Shell(node scripts/_verify.mjs http://localhost:5199 2 >& 1)",
+      "Shell(node scripts/drive.mjs http://localhost:5199 /tmp/ffwilllife-shots 2 >& 1)",
+      "Shell(rm:*)"
+    ],
+    "deny": [],
+    "defaultMode": "default"
+  }
+}

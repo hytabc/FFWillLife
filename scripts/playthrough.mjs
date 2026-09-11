@@ -61,6 +61,13 @@ page.on('console', (m) => {
 await page.goto(BASE, { waitUntil: 'networkidle' })
 await page.waitForSelector('.letter__blocks .block')
 
+// 首次进入会自动弹出游玩教程；先关掉，否则它的遮罩会挡住后续所有点击。
+// 关闭会写入偏好，之后的 reload 不会再弹。
+if ((await page.locator('.tutorial').count()) > 0) {
+  await page.locator('.tutorial__close').click()
+  await page.waitForSelector('.tutorial', { state: 'detached' })
+}
+
 log('=== 侧栏初始状态 ===')
 const groups = await page.locator('.channel-group').all()
 log(`章节数: ${groups.length}`)
@@ -89,7 +96,8 @@ for (let n = 0; n < MAX; n++) {
   const final = await rating(page)
 
   await page.locator('button.primary').click()
-  await page.waitForTimeout(220)
+  // 结算会先演出约一秒的「世界线改写」，正文要等演出结束才出现
+  await page.waitForSelector('.panel__body')
 
   const tendency = await page.locator('.panel__tendency li').allInnerTexts()
   tour.push({ title, rating: final, tries, tendency: tendency.map(flat) })

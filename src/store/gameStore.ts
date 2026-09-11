@@ -41,6 +41,12 @@ export interface GameState {
   borrowed: Record<BlockId, SpaceTime>
   /** 已提交的结算结果；null 表示尚未结算 */
   settled: LetterResolution | null
+  /**
+   * 结算进行中：点下「让这件事发生」之后、结果揭晓之前的那一小段时间。
+   * 它只是演出用的瞬时状态——用来锁住编排、让界面演绎"世界线正在改写"，
+   * 不进入存档，也不参与任何规则计算。
+   */
+  settling: boolean
   tendencyEvents: TendencyEvent[]
   /**
    * 全部已结算信件。**这是终章计算的输入之一**：
@@ -54,6 +60,8 @@ export interface GameState {
 
   reorder: (activeId: BlockId, overId: BlockId) => void
   settle: () => void
+  /** 开始结算演出 —— 界面点下按钮后先调用它，等演出结束再调用 `settle` 落定结果 */
+  beginSettle: () => void
   retry: () => void
   /** 切换到另一封信。会重置该信的编排状态，但**不动**已结算记录与倾向事件。 */
   openLetter: (letterId: LetterId) => void
@@ -103,14 +111,15 @@ export const useGameStore = create<GameState>((set, get) => ({
   arrangement: initial.arrangement,
   borrowed: initial.borrowed,
   settled: null,
+  settling: false,
   tendencyEvents: [],
   settledLetters: {},
   learnedTermIds: [],
   fullAnnotation: false,
 
   reorder: (activeId, overId) => {
-    const { arrangement, settled } = get()
-    if (settled) return // 已结算，需先「重新排列」
+    const { arrangement, settled, settling } = get()
+    if (settled || settling) return // 已结算或正在结算，需先「重新排列」
     const from = arrangement.indexOf(activeId)
     const to = arrangement.indexOf(overId)
     if (from === -1 || to === -1 || from === to) return
@@ -132,6 +141,7 @@ export const useGameStore = create<GameState>((set, get) => ({
     if (sandbox) {
       set({
         settled: resolution,
+        settling: false,
         experiments: [
           ...experiments,
           {
@@ -157,6 +167,7 @@ export const useGameStore = create<GameState>((set, get) => ({
 
     set({
       settled: resolution,
+      settling: false,
       tendencyEvents: [...tendencyEvents, ...toTendencyEvents(resolution, base)],
       settledLetters: {
         ...settledLetters,
@@ -171,11 +182,17 @@ export const useGameStore = create<GameState>((set, get) => ({
     })
   },
 
+  beginSettle: () => {
+    const { settled, settling } = get()
+    if (settled || settling) return
+    set({ settling: true })
+  },
+
   retry: () => {
     const letter = lettersById.get(get().letterId)
     if (!letter) return
     const fresh = initialState(letter)
-    set({ arrangement: fresh.arrangement, borrowed: fresh.borrowed, settled: null })
+    set({ arrangement: fresh.arrangement, borrowed: fresh.borrowed, settled: null, settling: false })
   },
 
   openLetter: (letterId) => {
@@ -187,18 +204,19 @@ export const useGameStore = create<GameState>((set, get) => ({
       arrangement: fresh.arrangement,
       borrowed: fresh.borrowed,
       settled: null,
+      settling: false,
     })
   },
 
   setBorrowed: (blockId, target) => {
-    const { borrowed, settled } = get()
-    if (settled) return
+    const { borrowed, settled, settling } = get()
+    if (settled || settling) return
     set({ borrowed: { ...borrowed, [blockId]: target } })
   },
 
   clearBorrowed: (blockId) => {
-    const { borrowed, settled } = get()
-    if (settled) return
+    const { borrowed, settled, settling } = get()
+    if (settled || settling) return
     const next = { ...borrowed }
     delete next[blockId]
     set({ borrowed: next })
@@ -222,7 +240,12 @@ export const useGameStore = create<GameState>((set, get) => ({
   experiments: [],
 
   toggleSandbox: () =>
-    set((s) => ({ sandbox: !s.sandbox, settled: null, experiments: s.sandbox ? s.experiments : [] })),
+    set((s) => ({
+      sandbox: !s.sandbox,
+      settled: null,
+      settling: false,
+      experiments: s.sandbox ? s.experiments : [],
+    })),
 
   clearExperiments: () => set({ experiments: [] }),
 
@@ -246,6 +269,7 @@ export const useGameStore = create<GameState>((set, get) => ({
       arrangement: fresh.arrangement,
       borrowed: fresh.borrowed,
       settled: null,
+      settling: false,
     })
     setActiveSlot(save.slotId)
   },
@@ -264,6 +288,7 @@ export const useGameStore = create<GameState>((set, get) => ({
       arrangement: fresh.arrangement,
       borrowed: fresh.borrowed,
       settled: null,
+      settling: false,
     })
   },
 }))

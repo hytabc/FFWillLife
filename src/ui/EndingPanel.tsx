@@ -1,5 +1,6 @@
+import { useEffect, useRef } from 'react'
 import { charactersById } from '../content'
-import { playSettle } from '../game/audio'
+import { playPickup, playSettle } from '../game/audio'
 import { resolvePlay } from '../game/play'
 import { MISPLACEMENT_LABEL, type LetterResolution } from '../engine/types'
 import { nextLetter } from '../game/progress'
@@ -13,22 +14,42 @@ interface Props {
 /**
  * 右侧结算面板。
  *
- * 拖动时显示**实时预览**（评级会怎么变），提交后显示**结算正文**。
- * 这是《Will》体验的核心：玩家在松手前就能看见因果的走向。
+ * 拖动时显示**实时预览**（评级会怎么变）。点下「让这件事发生」后，
+ * 先进入约一秒的「世界线改写」演出——期间编排被锁住、按钮不可再点，
+ * 然后才揭晓正文与这封信改变了谁。这一秒的留白是有意的：
+ * 它让"我的改动真的落到了世界线上"变成一个能被感知的动作，
+ * 而不是一次瞬间的状态切换。
  */
 export function EndingPanel({ live }: Props) {
   const settled = useGameStore((s) => s.settled)
+  const settling = useGameStore((s) => s.settling)
+  const beginSettle = useGameStore((s) => s.beginSettle)
   const settle = useGameStore((s) => s.settle)
   const retry = useGameStore((s) => s.retry)
   const settledLetters = useGameStore((s) => s.settledLetters)
   const openLetter = useGameStore((s) => s.openLetter)
   const upcoming = nextLetter(settledLetters)
+  const timer = useRef<number | undefined>(undefined)
+
+  // 演出结束前若组件卸载，清掉定时器，避免对已卸载的界面写状态
+  useEffect(
+    () => () => {
+      if (timer.current !== undefined) window.clearTimeout(timer.current)
+    },
+    [],
+  )
 
   const commit = () => {
-    // 先算出结果再发声：音效要按**最终评级**给和弦，而不是按下按钮时的预览
-    const preview = resolvePlay(useGameStore.getState())
-    settle()
-    playSettle(preview.ending.rating)
+    if (settled || settling) return
+    beginSettle()
+    playPickup() // 世界线开始颤动
+    timer.current = window.setTimeout(() => {
+      // 结果以**落定瞬间**的状态为准，而不是按下按钮时的预览
+      const final = resolvePlay(useGameStore.getState())
+      settle()
+      playSettle(final.ending.rating)
+      timer.current = undefined
+    }, 1000)
   }
 
   const shown = settled ?? live
@@ -36,7 +57,11 @@ export function EndingPanel({ live }: Props) {
   const displaced = shown.misplacements.filter((m) => m.kind !== 'none' && m.kind !== 'reorder')
 
   return (
-    <aside className="panel" style={{ ['--rating-color' as string]: color }}>
+    <aside
+      className={`panel${settling ? ' panel--settling' : ''}`}
+      style={{ ['--rating-color' as string]: color }}
+      aria-busy={settling}
+    >
       <div className="panel__rating">
         <span className="panel__rating-mark">{ratingLabel(shown.ending.rating)}</span>
         <span className="panel__rating-word">{shown.ending.title}</span>
@@ -99,6 +124,12 @@ export function EndingPanel({ live }: Props) {
             <p className="panel__next">下一封：{upcoming.title}</p>
           )}
         </>
+      ) : settling ? (
+        <div className="panel__settling" role="status" aria-live="polite">
+          <span className="panel__settling-orb" aria-hidden="true" />
+          <p className="panel__settling-text">因果线正在改写……</p>
+          <p className="panel__settling-sub">你改动的那几句话，正落向这条世界线。</p>
+        </div>
       ) : (
         <>
           <p className="panel__pending">

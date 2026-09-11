@@ -201,6 +201,7 @@ export function LetterView({ letter, misplacementByBlock }: Props) {
   const borrowed = useGameStore((s) => s.borrowed)
   const reorder = useGameStore((s) => s.reorder)
   const settled = useGameStore((s) => s.settled)
+  const settling = useGameStore((s) => s.settling)
   const [picking, setPicking] = useState<BlockId | null>(null)
   /**
    * 点选式重排（PRD §7.2 的移动端备选操作）。
@@ -211,6 +212,7 @@ export function LetterView({ letter, misplacementByBlock }: Props) {
   const [selected, setSelected] = useState<BlockId | null>(null)
 
   const handleTap = (id: BlockId) => {
+    if (settling) return // 结算演出中，编排已锁定
     if (selected === null) {
       setSelected(id)
       playPickup()
@@ -264,7 +266,7 @@ export function LetterView({ letter, misplacementByBlock }: Props) {
   const pickingStatement = pickingBlock ? statementsById.get(pickingBlock.statementId) : undefined
 
   return (
-    <article className="letter">
+    <article className={`letter${settling ? ' letter--settling' : ''}`}>
       <header className="letter__head">
         <h2 className="letter__title">{letter.title}</h2>
         <p className="letter__anchor">
@@ -307,7 +309,7 @@ export function LetterView({ letter, misplacementByBlock }: Props) {
                   {...item}
                   borrowed={borrowed[item.block.id]}
                   onPickTime={() => setPicking(item.block.id)}
-                  locked={false}
+                  locked={settling}
                   selected={selected === item.block.id}
                   onTap={() => handleTap(item.block.id)}
                 />
@@ -330,7 +332,9 @@ export function LetterView({ letter, misplacementByBlock }: Props) {
 
       <p className="letter__signature">{letter.signature}</p>
 
-      {selected !== null ? (
+      {settling ? (
+        <p className="letter__hint letter__hint--active">这几句话正在落向世界线……</p>
+      ) : selected !== null ? (
         <p className="letter__hint letter__hint--active">
           已选中一句话。再点另一句，它就移到那个位置。
         </p>
